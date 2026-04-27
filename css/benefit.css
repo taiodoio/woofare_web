@@ -25,7 +25,7 @@
   max-width: var(--max-text);
 }
 
-.benefit__intro p {
+.benefit__intro p:not(.label) {
   max-width: var(--max-text);
   font-size: var(--size-body-lg);
   line-height: var(--lh-body-lg);
@@ -84,7 +84,7 @@
 }
 
 .ppp-card__copy .label {
-  color: var(--color-accent-light);
+  color: var(--color-accent);
 }
 
 .ppp-card__title {
@@ -251,7 +251,7 @@
   font-size: var(--size-h2);
 }
 
-.verified-section__copy p {
+.verified-section__copy p:not(.label) {
   font-size: var(--size-body);
   line-height: var(--lh-body);
   color: var(--color-text-dark);
@@ -259,7 +259,7 @@
 
 .verified-list {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  /* grid-template-columns: 1fr 1fr; */
   gap: var(--gap-sm);
   flex: 1;
   min-width: 0;

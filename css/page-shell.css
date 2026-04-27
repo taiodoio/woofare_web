@@ -78,11 +78,11 @@ button {
 
 .label {
   font-family: var(--font-body);
-  font-size: var(--size-label);
+  font-size: var(--size-eyebrow);
   font-weight: 800;
-  line-height: var(--lh-label);
-  letter-spacing: var(--tracking-label);
-  text-transform: uppercase;
+  line-height: var(--lh-eyebrow);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: none;
   color: var(--color-accent);
 }
 
@@ -229,7 +229,7 @@ button {
   max-width: var(--max-text);
 }
 
-.section-heading p {
+.section-heading p:not(.label) {
   max-width: var(--max-text);
   font-size: var(--size-body-lg);
   line-height: var(--lh-body-lg);

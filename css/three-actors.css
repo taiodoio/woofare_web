@@ -17,7 +17,9 @@
   display: flex;
   align-items: stretch;
   justify-content: space-between;
-  width: 100%;
+  width: min(100%, calc(3 * 359px));
+  margin-inline: auto;
+  gap: var(--gap-cards);
 }
 
 .actor-card {

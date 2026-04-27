@@ -30,6 +30,7 @@
   --font-body:    'Nunito', sans-serif;
 
   --size-label:   14px;
+  --size-eyebrow: clamp(20px, 1.6vw, 28px);
   --size-body-sm: 16px;
   --size-body:    18px;
   --size-body-lg: 20px;
@@ -41,6 +42,7 @@
   --size-stat:    56px;
 
   --lh-label:   21.7px;
+  --lh-eyebrow: 1.1;
   --lh-body-sm: 24.8px;
   --lh-body:    27.9px;
   --lh-body-lg: 31px;
@@ -51,6 +53,7 @@
   --lh-h1:      67.2px;
 
   --tracking-label: 1.96px;
+  --tracking-eyebrow: 0.08em;
   --tracking-h:     0.2px;
 
   /* Spacing */

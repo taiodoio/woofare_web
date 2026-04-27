@@ -29,7 +29,8 @@
   align-items: stretch;
   justify-content: space-between;
   gap: var(--gap-cards);
-  width: var(--max-content);
+  width: min(100%, var(--max-content));
+  margin-inline: auto;
 }
 
 /* ─── Base comparison card ──────────────────────────────────────────────── */
@@ -57,15 +58,14 @@
 /* ─── Card header ───────────────────────────────────────────────────────── */
 
 .comparison-card__eyebrow {
-  font-size: var(--size-label);
+  font-size: var(--size-eyebrow);
   font-weight: 800;
-  line-height: var(--lh-label);
-  letter-spacing: var(--tracking-label);
-  text-transform: uppercase;
+  line-height: var(--lh-eyebrow);
+  letter-spacing: var(--tracking-eyebrow);
+  text-transform: none;
+  color: var(--color-accent);
 }
 
-.comparison-card--base    .comparison-card__eyebrow { color: var(--color-accent); }
-.comparison-card--woofare .comparison-card__eyebrow { color: var(--color-accent-light); }
 
 .comparison-card__heading {
   font-family: var(--font-heading);
