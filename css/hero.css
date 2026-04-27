@@ -1,0 +1,47 @@
+/* ─── Hero Section ───────────────────────────────────────────────────────── */
+
+.hero {
+  width: 100%;
+  padding: 15px 0;
+  overflow: hidden;
+}
+
+.hero__inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+/* ─── Left column ───────────────────────────────────────────────────────── */
+
+.hero__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  width: 644px;
+  flex-shrink: 0;
+}
+
+.hero__eyebrow {
+  /* inherits .label */
+}
+
+.hero__title {
+  font-family: var(--font-heading);
+  font-size: var(--size-h1);
+  line-height: var(--lh-h1);
+  letter-spacing: var(--tracking-h);
+  color: var(--color-dark);
+}
+
+.hero__title--accent {
+  color: var(--color-accent);
+}
+
+.hero__body {
+  font-size: var(--size-body-lg);
+  line-height: var(--lh-body-lg);
+  color: var(--color-text-mid);
+  font-weight: 400;
+}

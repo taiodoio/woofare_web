@@ -1,0 +1,99 @@
+/* ─── Woofare Design Tokens ──────────────────────────────────────────────── */
+/* Source: Figma file NUMyyk2QDx3vlyZu6mvnei, canvas "New"                    */
+
+:root {
+  /* Colors */
+  --color-bg:           #faf7ef;
+  --color-dark:         #2a2f31;
+  --color-accent:       #ff594f;
+  --color-accent-light: #ffb4ac;
+  --color-accent-pale:  #f4b2a5;
+  --color-blue:         #556bda;
+  --color-blue-deep:    #3d4fb0;
+  --color-white:        #ffffff;
+  --color-text-dark:    #3c4244;
+  --color-text-mid:     #545b5e;
+  --color-text-light:   #6b7275;
+  --color-text-muted:   #8a9093;
+  --color-dot-inactive: #cfd3d4;
+  --color-green-check:  #8ce6a8;
+  --color-orange:       #ffa400;
+
+  /* Surface */
+  --color-nav-bg:       rgba(250, 247, 239, 0.85);
+  --color-card-border:  rgba(60, 66, 68, 0.06);
+  --color-form-bg:      #fbf6e6;
+  --color-form-border:  #eee8d7;
+
+  /* Typography */
+  --font-heading: 'Lilita One', sans-serif;
+  --font-body:    'Nunito', sans-serif;
+
+  --size-label:   14px;
+  --size-body-sm: 16px;
+  --size-body:    18px;
+  --size-body-lg: 20px;
+  --size-h5:      22px;
+  --size-h4:      26px;
+  --size-h3:      32px;
+  --size-h2:      48px;
+  --size-h1:      64px;
+  --size-stat:    56px;
+
+  --lh-label:   21.7px;
+  --lh-body-sm: 24.8px;
+  --lh-body:    27.9px;
+  --lh-body-lg: 31px;
+  --lh-h5:      26.4px;
+  --lh-h4:      29.9px;
+  --lh-h3:      36.8px;
+  --lh-h2:      51.84px;
+  --lh-h1:      67.2px;
+
+  --tracking-label: 1.96px;
+  --tracking-h:     0.2px;
+
+  /* Spacing */
+  --gap-sections:   150px;
+  --gap-content:    64px;
+  --gap-cards:      16px;
+  --gap-items:      24px;
+  --gap-sm:         12px;
+  --gap-xs:         9px;
+
+  --padding-page:   263px;   /* horizontal page padding at 1710px */
+  --padding-card:   33px;
+  --padding-nav:    28px;
+
+  /* Layout */
+  --max-content: 1184px;     /* 1710 - 2×263 */
+  --max-text:    820px;
+  --nav-height:  83px;
+
+  /* Border radius */
+  --radius-card:  28px;
+  --radius-pill:  999px;
+  --radius-icon:  24px;
+  --radius-step:  48px;
+  --radius-img:   45px;
+  --radius-form:  22px;
+  --radius-input: 12px;
+  --radius-chip:  14px;
+  --radius-tag:   8px;
+  --radius-sm:    5px;
+
+  /* Shadows — from Figma effect styles */
+  --shadow-card:   0px 6px 0px rgba(60, 66, 68, 0.06),
+                   0px 14px 24px -14px rgba(60, 66, 68, 0.22);
+  --shadow-card-0: 0px 6px 0px rgba(60, 66, 68, 0.06),
+                   0px 14px 24px 0px rgba(60, 66, 68, 0.22);
+  --shadow-btn:    0px 6px 0px var(--color-blue-deep);
+  --shadow-btn-sm: 0px 4px 0px var(--color-blue-deep);
+  --shadow-img:    0px 4px 20px 0px rgba(0, 0, 0, 0.1);
+  --shadow-img-sm: 0px 4px 10px 0px rgba(0, 0, 0, 0.1);
+  --shadow-tab:    0px 6px 0px rgba(0, 0, 0, 0.12);
+
+  /* Transitions */
+  --transition-tab: background 200ms ease, color 200ms ease,
+                    box-shadow 200ms ease;
+}

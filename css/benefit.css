@@ -1,0 +1,297 @@
+/* ─── Benefit Section (audience-specific) ───────────────────────────────── */
+/* Each state has its own benefit section layout.                             */
+
+/* ─── Shared benefit section wrapper ───────────────────────────────────── */
+
+.benefit {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 50px;
+}
+
+/* ─── Section intro (centered) ─────────────────────────────────────────── */
+
+.benefit__intro {
+  display: flex;
+  flex-direction: column;
+  gap: 27px;
+  align-items: center;
+  text-align: center;
+  width: 100%;
+}
+
+.benefit__intro .heading-2 {
+  max-width: var(--max-text);
+}
+
+.benefit__intro p {
+  max-width: var(--max-text);
+  font-size: var(--size-body-lg);
+  line-height: var(--lh-body-lg);
+  color: var(--color-text-mid);
+}
+
+/* ─── Benefit detail: image + list (State A & B) ───────────────────────── */
+
+.benefit__detail {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.benefit__detail-heading {
+  font-family: var(--font-heading);
+  font-size: var(--size-h3);
+  line-height: var(--lh-h3);
+  letter-spacing: var(--tracking-h);
+  color: var(--color-dark);
+  text-align: center;
+}
+
+.benefit__content-group {
+  display: flex;
+  gap: 50px;
+  align-items: center;
+  width: 100%;
+}
+
+/* Feature list inside benefit (identical to solution__feature-list) */
+.benefit__list {
+  flex: 1;
+  min-width: 0;
+}
+
+/* ─── State C: Pay-per-performance card ────────────────────────────────── */
+
+.ppp-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  overflow: hidden;
+  padding: 24px 44px;
+  background-color: var(--color-dark);
+  border-radius: var(--radius-card);
+  width: 100%;
+}
+
+.ppp-card__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+  width: 553px;
+  flex-shrink: 0;
+}
+
+.ppp-card__copy .label {
+  color: var(--color-accent-light);
+}
+
+.ppp-card__title {
+  font-family: var(--font-heading);
+  font-size: var(--size-h2);
+  line-height: var(--lh-h2);
+  letter-spacing: var(--tracking-h);
+  color: var(--color-white);
+}
+
+.ppp-card__body {
+  font-size: var(--size-body);
+  line-height: var(--lh-body);
+  color: rgba(255, 255, 255, 0.8);
+  width: 519px;
+}
+
+.ppp-card__list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  list-style: none;
+}
+
+.ppp-card__list-item {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: var(--size-body);
+  font-weight: 700;
+  line-height: var(--lh-body);
+  color: var(--color-white);
+  white-space: nowrap;
+  width: calc(50% - 5px);
+}
+
+.ppp-card__list-item::before {
+  content: '';
+  display: inline-block;
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-green-check);
+}
+
+/* Zero-euro "price" block */
+.ppp-card__price {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 4px;
+  height: 476px;
+  border-radius: 24px;
+  background: radial-gradient(ellipse at 50% 10%, #ff7f77 0%, #ff594f 40%, #c83f36 120%);
+  box-shadow: inset 0px -10px 0px 0px rgba(0, 0, 0, 0.15);
+  padding: 18px 16px;
+}
+
+.ppp-card__price-amount {
+  font-family: var(--font-heading);
+  font-size: 96px;
+  line-height: 1.55;
+  color: var(--color-white);
+  text-align: center;
+  width: 100%;
+}
+
+.ppp-card__price-label {
+  font-family: var(--font-body);
+  font-size: var(--size-label);
+  font-weight: 800;
+  line-height: var(--lh-label);
+  letter-spacing: 1.12px;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.85);
+  white-space: nowrap;
+}
+
+/* ─── State C: Network benefit cards ────────────────────────────────────── */
+
+.network-cards {
+  display: grid;
+  grid-template-columns: repeat(4, 278px);
+  gap: var(--gap-items);
+  justify-content: center;
+  justify-items: stretch;
+  width: 100%;
+}
+
+.network-card {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 33px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card-0);
+  width: 278px;
+  max-width: 100%;
+  flex-shrink: 0;
+}
+
+/* Photo thumbnail inside network card */
+.benefit-card__photo {
+  width: 212px;
+  height: 212px;
+  border-radius: var(--radius-tag);
+  overflow: hidden;
+}
+
+.benefit-card__photo img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.network-card__text {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.network-card__title {
+  font-family: var(--font-heading);
+  font-size: var(--size-h5);
+  line-height: var(--lh-h5);
+  letter-spacing: var(--tracking-h);
+  color: var(--color-dark);
+}
+
+.network-card__desc {
+  font-size: var(--size-body);
+  line-height: var(--lh-body);
+  font-weight: 400;
+  color: var(--color-text-mid);
+  width: 212px;
+}
+
+/* ─── State C: Verified checklist ──────────────────────────────────────── */
+
+.verified-section {
+  display: flex;
+  gap: 50px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.verified-section__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex: 1;
+  min-width: 0;
+}
+
+.verified-section__copy .heading-2 {
+  font-size: var(--size-h2);
+}
+
+.verified-section__copy p {
+  font-size: var(--size-body);
+  line-height: var(--lh-body);
+  color: var(--color-text-dark);
+}
+
+.verified-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap-sm);
+  flex: 1;
+  min-width: 0;
+  width: 100%;
+  list-style: none;
+}
+
+.verified-list__item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background-color: var(--color-white);
+  padding: 14px 16px;
+  border-radius: var(--radius-chip);
+  box-shadow: var(--shadow-card-0);
+  font-size: 17px;
+  line-height: 26.35px;
+  font-weight: 400;
+  color: var(--color-text-dark);
+  width: 100%;
+}
+
+.verified-list__check {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  width: 26px;
+  height: 26px;
+  border-radius: var(--radius-tag);
+  background-color: var(--color-accent);
+  color: var(--color-white);
+  font-size: var(--size-label);
+  font-weight: 900;
+}

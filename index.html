@@ -1,0 +1,1253 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Woofare — Il benefit aziendale pensato per chi ha un animale domestico</title>
+  <meta name="description" content="Woofare aiuta aziende, dipendenti e pet-services a trasformare il fringe benefit in un servizio concreto." />
+
+  <!-- Google Fonts: Lilita One + Nunito -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lilita+One&family=Nunito:wght@400;700;800;900&display=swap" rel="stylesheet" />
+
+  <!-- Design tokens first, then components, then responsive overrides -->
+  <link rel="stylesheet" href="css/tokens.css" />
+  <link rel="stylesheet" href="css/page-shell.css" />
+  <link rel="stylesheet" href="css/nav.css" />
+  <link rel="stylesheet" href="css/state-selector.css" />
+  <link rel="stylesheet" href="css/image-block.css" />
+  <link rel="stylesheet" href="css/illustration.css" />
+  <link rel="stylesheet" href="css/hero.css" />
+  <link rel="stylesheet" href="css/stats.css" />
+  <link rel="stylesheet" href="css/solution.css" />
+  <link rel="stylesheet" href="css/benefit.css" />
+  <link rel="stylesheet" href="css/how-to.css" />
+  <link rel="stylesheet" href="css/dashboard.css" />
+  <link rel="stylesheet" href="css/comparison.css" />
+  <link rel="stylesheet" href="css/cta-form.css" />
+  <link rel="stylesheet" href="css/three-actors.css" />
+  <link rel="stylesheet" href="css/footer.css" />
+  <link rel="stylesheet" href="css/responsive.css" />
+</head>
+
+<body>
+<div class="page-shell" data-state="aziende">
+
+  <!-- ═══════════════════════════════════════════════════════════════ NAV -->
+  <nav class="nav" aria-label="Navigazione principale">
+    <div class="nav__inner section-wrap">
+      <a href="/" class="nav__logo-link" aria-label="Woofare home">
+        <img
+          class="nav__logo"
+          src="imgs/logo-woofare.png"
+          alt="Woofare"
+          width="180"
+          height="46"
+        />
+      </a>
+
+      <!-- State A + B nav links -->
+      <ul class="nav__links nav__links--aziende" role="list">
+        <li><a class="nav__link" href="#problema">Problema</a></li>
+        <li><a class="nav__link" href="#section-howto-a">Come funziona</a></li>
+        <li><a class="nav__link" href="#risparmio">Risparmio</a></li>
+        <li><a class="nav__link" href="#per-chi">Per chi</a></li>
+      </ul>
+      <ul class="nav__links nav__links--dipendenti" role="list">
+        <li><a class="nav__link" href="#problema-b">Problema</a></li>
+        <li><a class="nav__link" href="#section-howto-b">Come funziona</a></li>
+        <li><a class="nav__link" href="#risparmio-b">Risparmio</a></li>
+        <li><a class="nav__link" href="#per-chi-b">Per chi</a></li>
+      </ul>
+      <!-- State C nav links -->
+      <ul class="nav__links nav__links--pet" role="list">
+        <li><a class="nav__link" href="#problema-c">Problema</a></li>
+        <li><a class="nav__link" href="#zero-costi">Zero costi</a></li>
+        <li><a class="nav__link" href="#network">Il network</a></li>
+        <li><a class="nav__link" href="#per-chi-c">Per chi</a></li>
+      </ul>
+
+      <button class="nav__hamburger" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+
+      <a class="nav__cta" href="#waiting-list">Waiting list</a>
+    </div>
+  </nav>
+
+  <!-- ═══════════════════════════════════════════════════════ STATE SELECTOR -->
+  <div class="state-selector" role="tablist" aria-label="Scegli il tuo profilo">
+    <button
+      class="state-selector__tab state-selector__tab--active"
+      role="tab"
+      aria-selected="true"
+      aria-controls="state-aziende"
+      data-target="state-aziende"
+    >
+      <span class="state-selector__dot"></span>
+      Per Aziende
+    </button>
+    <button
+      class="state-selector__tab"
+      role="tab"
+      aria-selected="false"
+      aria-controls="state-dipendenti"
+      data-target="state-dipendenti"
+    >
+      <span class="state-selector__dot"></span>
+      Per Dipendenti
+    </button>
+    <button
+      class="state-selector__tab state-selector__tab--pet"
+      role="tab"
+      aria-selected="false"
+      aria-controls="state-pet-services"
+      data-target="state-pet-services"
+    >
+      <span class="state-selector__dot"></span>
+      Per Pet-Services
+    </button>
+    <div class="state-selector__mobile" data-mobile-selector>
+      <button
+        type="button"
+        id="state-selector-mobile-button"
+        class="state-selector__mobile-trigger"
+        aria-haspopup="listbox"
+        aria-expanded="false"
+        aria-controls="state-selector-mobile-list"
+      >
+        <span class="state-selector__dot"></span>
+        <span class="state-selector__mobile-label">Per Aziende</span>
+      </button>
+      <div class="state-selector__mobile-menu" id="state-selector-mobile-list" role="listbox" aria-label="Scegli il tuo profilo" hidden>
+        <button type="button" class="state-selector__mobile-option" role="option" data-target="state-aziende">
+          <span class="state-selector__dot"></span>
+          Per Aziende
+        </button>
+        <button type="button" class="state-selector__mobile-option" role="option" data-target="state-dipendenti">
+          <span class="state-selector__dot"></span>
+          Per Dipendenti
+        </button>
+        <button type="button" class="state-selector__mobile-option" role="option" data-target="state-pet-services">
+          <span class="state-selector__dot"></span>
+          Per Pet-Services
+        </button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ═══════════════════════════════════════════════════ CONTENT STATE A -->
+  <!-- Audience: HR / People & Welfare                                     -->
+  <div
+    id="state-aziende"
+    class="content-state section-wrap"
+    role="tabpanel"
+    aria-labelledby="tab-aziende"
+  >
+
+    <!-- Hero A -->
+    <section class="hero" aria-labelledby="hero-a-title">
+      <div class="hero__inner">
+        <div class="hero__copy">
+          <p class="label hero__eyebrow">Per HR, People &amp; Welfare</p>
+          <h1 id="hero-a-title" class="hero__title">
+            Il benefit aziendale
+            <span class="hero__title--accent">pensato per chi ha un animale domestico.</span>
+          </h1>
+          <p class="hero__body">
+            Woofare aiuta aziende, dipendenti e pet-services a trasformare il fringe benefit in
+            un servizio concreto: più serenità per chi lavora, più valore per l'azienda,
+            più opportunità per i pet-services.
+          </p>
+          <div class="btn-group">
+            <a class="btn-primary" href="#waiting-list-a">Entra in waiting list →</a>
+            <a class="btn-outline" href="#section-howto-a" data-scroll-to="section-howto-a">Scopri come funziona</a>
+          </div>
+        </div>
+
+        <!-- ImageBlock: hero rotated photo -->
+        <div class="image-block image-block--hero">
+          <div class="image-block__rotator">
+            <div class="image-block image-block--rot-pos-7">
+              <div class="image-block__frame image-block__frame--crop">
+                <img
+                  src="imgs/hero-a-photo.png"
+                  alt="Persona con animale domestico"
+                  width="460" height="353"
+                />
+              </div>
+            </div>
+          </div>
+          <!-- Illustration: vectorized overlay -->
+          <div class="image-block__overlay image-block__overlay--hero-vectorized">
+            <img
+              src="imgs/hero-a-overlay-vec.svg"
+              alt=""
+              aria-hidden="true"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats (shared content) -->
+    <section class="stats" id="problema" aria-labelledby="stats-a-title">
+      <div class="stats__inner">
+        <div class="section-heading">
+          <p class="label">Il contesto</p>
+          <h2 id="stats-a-title" class="heading-2">Il rientro in ufficio ha riaperto un problema reale.</h2>
+          <p>
+            Per molte persone, tornare in ufficio significa lasciare il proprio animale da solo
+            per molte ore. Questo genera stress, preoccupazione e un impatto concreto sulla
+            qualità della giornata lavorativa. Allo stesso tempo, le aziende cercano benefit più
+            distintivi, mentre i pet-services non hanno ancora un canale semplice per entrare nel
+            welfare aziendale.
+          </p>
+        </div>
+        <div class="stats__cards">
+          <div class="stat-card">
+            <p class="stat-card__number">9/10</p>
+            <p class="stat-card__text"><span>Chiedono </span><strong>più welfare aziendale</strong></p>
+          </div>
+          <div class="stat-card">
+            <p class="stat-card__number">79%</p>
+            <p class="stat-card__text"><strong>Si preoccupa </strong><span>per il proprio </span><strong>animale</strong><span> mentre lavora</span></p>
+          </div>
+          <div class="stat-card">
+            <p class="stat-card__number">47%</p>
+            <p class="stat-card__text"><span>Prova vera</span><strong> ansia da separazione</strong></p>
+          </div>
+          <div class="stat-card">
+            <p class="stat-card__number">+30%</p>
+            <p class="stat-card__text"><span>Più probabilità di </span><strong>accettare un lavoro pet-friendly</strong></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solution (shared content) -->
+    <section class="solution">
+      <div class="solution__inner">
+        <!-- ImageBlock: left rotated photo -->
+        <div class="image-block image-block--section-left">
+          <div class="image-block__rotator">
+            <div class="image-block image-block--rot-neg-3">
+              <div class="image-block__frame image-block__frame--crop image-block__frame--portrait">
+                <img
+                  src="imgs/solution-photo.png"
+                  alt="Pet-service in azione"
+                  width="384" height="564"
+                  loading="lazy"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="image-block__overlay image-block__overlay--section-left-vec">
+            <img loading="lazy" src="imgs/solution-overlay-vec.svg" alt="" aria-hidden="true" />
+          </div>
+        </div>
+
+        <!-- Content right -->
+        <div class="solution__content">
+          <div class="solution__header">
+            <p class="label">La soluzione</p>
+            <h2 class="solution__title">
+              Una soluzione concreta,<br>
+              <span class="highlight-word">non</span> una gift card generica.
+            </h2>
+            <p class="solution__body">
+              <strong>Woofare è una piattaforma verticale dedicata ai servizi pet. </strong>
+              Aiuta le aziende a offrire un benefit ad alto valore percepito, i dipendenti
+              a usare il proprio budget su servizi davvero utili e i pet-services a intercettare
+              clienti aziendali in modo semplice.
+            </p>
+          </div>
+          <ul class="feature-list" role="list">
+            <li class="feature-item">
+              <p><span class="feature-item__title">Wallet dedicato: </span><span class="feature-item__desc">Budget pet utilizzabile solo su servizi del network.</span></p>
+            </li>
+            <li class="feature-item">
+              <p><span class="feature-item__title">Network verticale: </span><span class="feature-item__desc">Asili, sitter, educatori, strutture verificate.</span></p>
+            </li>
+            <li class="feature-item">
+              <p><span class="feature-item__title">Fruizione immediata: </span><span class="feature-item__desc">Il dipendente usa il benefit direttamente sul posto.</span></p>
+            </li>
+            <li class="feature-item">
+              <p><span class="feature-item__title">Valore percepito: </span><span class="feature-item__desc">Più impatto di un bonus in busta paga.</span></p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefit A: HR-specific -->
+    <section class="benefit" aria-labelledby="benefit-a-title">
+      <div class="benefit__intro">
+        <p class="label">Per HR, People e Welfare</p>
+        <h2 id="benefit-a-title" class="heading-2">Offri un benefit distintivo che risolve un problema quotidiano.</h2>
+        <p>
+          Con Woofare attivi un servizio pet-friendly ad alto valore percepito: scegli i
+          dipendenti da abilitare, carichi il wallet aziendale e permetti al team di usare
+          il benefit presso pet-services del network.
+        </p>
+        <div class="btn-group" style="justify-content:center;">
+          <a class="btn-primary" href="#waiting-list-a">Candidati per il pilota →</a>
+          <a class="btn-outline" href="#cta-a">Prenota una call</a>
+        </div>
+      </div>
+
+      <div class="benefit__detail">
+        <h3 class="benefit__detail-heading">Un benefit che migliora benessere, retention ed employer branding</h3>
+        <div class="benefit__content-group">
+          <!-- ImageBlock: rotated right image -->
+          <div class="image-block image-block--section-right" style="position:relative;">
+            <div class="image-block__rotator">
+              <div class="image-block image-block--rot-pos-4">
+                <div class="image-block__frame image-block__frame--crop">
+                  <img
+                    src="imgs/benefit-a-photo.png"
+                    alt="Team in ufficio"
+                    width="607" height="433"
+                  />
+                </div>
+              </div>
+            </div>
+            <div class="image-block__overlay image-block__overlay--section-vec">
+              <img loading="lazy" src="imgs/benefit-a-overlay-vec.svg" alt="" aria-hidden="true" />
+            </div>
+          </div>
+
+          <!-- Feature list right -->
+          <ul class="benefit__list feature-list" role="list">
+            <li class="feature-item">
+              <p><span class="feature-item__title">Più focus in ufficio</span><br><span class="feature-item__desc">Riduce stress, preoccupazioni e interruzioni legate alla gestione dell'animale durante la giornata.</span></p>
+            </li>
+            <li class="feature-item">
+              <p><span class="feature-item__title">Più retention</span><br><span class="feature-item__desc">Trasforma un problema reale in un benefit distintivo e memorabile.</span></p>
+            </li>
+            <li class="feature-item">
+              <p><span class="feature-item__title">Più employer branding</span><br><span class="feature-item__desc">Le politiche pet-friendly aumentano l'attrattività, soprattutto verso Gen Z e Millennials.</span></p>
+            </li>
+            <li class="feature-item">
+              <p><span class="feature-item__title">Più controllo</span><br><span class="feature-item__desc">Il servizio è pensato per essere gestito con una logica HR chiara e semplice.</span></p>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- How-To A -->
+    <section class="how-to" id="section-howto-a" aria-labelledby="howto-a-title">
+      <div class="how-to__inner">
+        <div class="section-heading">
+          <p class="label">Come funziona</p>
+          <h2 id="howto-a-title" class="heading-2">Quattro passi, zero complessità.</h2>
+        </div>
+        <!-- Illustration: steps SVG -->
+        <div class="illustration illustration--steps">
+          <img loading="lazy" src="imgs/howto-steps-illustration.svg" alt="" aria-hidden="true" />
+        </div>
+        <div class="steps">
+          <div class="step-card">
+            <div class="step-card__badge step-card__badge--accent">1</div>
+            <p class="step-card__title">Attivi il servizio</p>
+            <p class="step-card__desc">Ti iscrivi e abiliti Woofare per i dipendenti che scegli.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-card__badge step-card__badge--accent">2</div>
+            <p class="step-card__title">Configura</p>
+            <p class="step-card__desc">Decidi quanti dipendenti includere e con quali plafond.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-card__badge step-card__badge--accent">3</div>
+            <p class="step-card__title">Carichi il wallet</p>
+            <p class="step-card__desc">Il budget aziendale viene assegnato al servizio.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-card__badge step-card__badge--accent">4</div>
+            <p class="step-card__title">Monitori l'adozione</p>
+            <p class="step-card__desc">I dipendenti usano il benefit nel network Woofare.</p>
+          </div>
+        </div>
+        <div class="steps-footnote">
+          <p>
+            <strong>Costi deducibili.</strong>
+            Sia il fringe benefit destinato ai dipendenti, sia la piccola quota di adesione per
+            dipendente sono da presentare come <strong>costi deducibili per l'azienda</strong>.
+            Il credito non utilizzato può essere <strong>restituito a fine anno</strong> oppure
+            <strong>mantenuto come base per l'anno successivo</strong>.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- Dashboard A -->
+    <section class="dashboard" aria-labelledby="dashboard-a-title">
+      <div class="dashboard__inner">
+        <p class="label dashboard__eyebrow">Dashboard HR</p>
+        <h2 id="dashboard-a-title" class="dashboard__title">Una Dashboard dove hai tutto sotto controllo.</h2>
+        <div class="dashboard__screenshot">
+          <img
+            src="imgs/dashboard-a-screenshot.png"
+            alt="Screenshot della dashboard HR di Woofare"
+            width="1072" height="703"
+          />
+        </div>
+        <div class="info-chips-grid">
+          <div class="info-chip"><span class="info-chip__dot"></span>Wallet aziendale e saldo in tempo reale</div>
+          <div class="info-chip"><span class="info-chip__dot"></span>Dipendenti attivati e utilizzo del credito</div>
+          <div class="info-chip"><span class="info-chip__dot"></span>Andamento dell'adozione mese per mese</div>
+          <div class="info-chip"><span class="info-chip__dot"></span>Servizi più richiesti e città coperte</div>
+        </div>
+        <p class="dashboard__note">
+          Stiamo attivamente lavorando per <strong>creare la Dashboard perfetta per te.</strong>
+          Hai idee, necessità o suggerimenti? Scrivici! Vogliamo realizzare un prodotto di cui
+          ti possa innamorare.
+        </p>
+      </div>
+    </section>
+
+    <!-- Comparison A -->
+    <section class="comparison" id="risparmio" aria-labelledby="comparison-a-title">
+      <div class="comparison__inner" style="gap:var(--gap-content);">
+        <div class="comparison__header">
+          <p class="label">Confronto economico</p>
+          <h2 id="comparison-a-title" class="heading-2">Meglio un aumento in busta paga o 1.000€ di benefit utilizzabili?</h2>
+          <p style="font-size:var(--size-body-lg);line-height:var(--lh-body-lg);color:var(--color-text-mid);max-width:var(--max-text);">
+            Con Woofare il principio è semplice: se l'azienda assegna 1.000€, il dipendente spende 1.000€ in servizi pet.
+          </p>
+        </div>
+        <div class="comparison__cards">
+          <div class="comparison-card comparison-card--base">
+            <p class="comparison-card__eyebrow">Aumento in busta paga</p>
+            <p class="comparison-card__heading">1.000€ lordi</p>
+            <div class="comparison-card__amount">
+              <span class="comparison-card__amount-big">1.000€</span>
+              <span class="comparison-card__amount-sub">≈ 520€ netti</span>
+            </div>
+            <ul class="comparison-card__list" role="list">
+              <li class="comparison-card__list-item"><span class="comparison-card__bullet"></span>L'importo si riduce per tasse e contributi</li>
+              <li class="comparison-card__list-item"><span class="comparison-card__bullet"></span>Non è destinato a un bisogno specifico</li>
+              <li class="comparison-card__list-item"><span class="comparison-card__bullet"></span>Viene assorbito nelle spese generali</li>
+              <li class="comparison-card__list-item"><span class="comparison-card__bullet"></span>Non crea un'esperienza di benefit distintiva</li>
+            </ul>
+          </div>
+          <div class="comparison-card comparison-card--woofare">
+            <p class="comparison-card__eyebrow">Fringe benefit con Woofare</p>
+            <p class="comparison-card__heading">1.000€ in servizi</p>
+            <div class="comparison-card__amount">
+              <span class="comparison-card__amount-big">1.000€</span>
+              <span class="comparison-card__amount-sub">spendibili al 100%</span>
+            </div>
+            <ul class="comparison-card__list" role="list">
+              <li class="comparison-card__list-item"><span class="comparison-card__bullet"></span>L'importo assegnato resta integralmente spendibile</li>
+              <li class="comparison-card__list-item"><span class="comparison-card__bullet"></span>Budget dedicato a un bisogno concreto e immediato</li>
+              <li class="comparison-card__list-item"><span class="comparison-card__bullet"></span>Valore percepito più alto di un importo in busta</li>
+              <li class="comparison-card__list-item"><span class="comparison-card__bullet"></span>Fruizione semplice su una rete di fornitori locali</li>
+            </ul>
+          </div>
+        </div>
+        <p class="comparison__footnote">
+          Non si tratta solo di dare di più. Si tratta di dare un
+          <strong>budget che il dipendente possa usare davvero</strong>,
+          per un bisogno reale, in modo semplice e immediato.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA Form A -->
+    <section class="cta-form" id="waiting-list-a" aria-labelledby="cta-a-title">
+      <div class="cta-form__inner">
+        <div class="cta-form__copy">
+          <p class="label">Candidati per il pilota</p>
+          <h2 id="cta-a-title" class="cta-form__title">Vuoi portare Woofare nella tua azienda?</h2>
+          <p class="cta-form__body">Stiamo selezionando le realtà con cui partire. Candidati per il pilota o lasciaci il tuo contatto.</p>
+          <div class="contact-links">
+            <a class="contact-link" href="mailto:info@woofare.it">✉ info@woofare.it</a>
+            <a class="contact-link" href="https://wa.me/">💬 WhatsApp</a>
+            <a class="contact-link" href="#prenota">📞 Prenota una call</a>
+          </div>
+        </div>
+        <form class="cta-form__form" novalidate>
+          <div class="form-field">
+            <label class="form-label" for="email-a">Email *</label>
+            <input class="form-input" id="email-a" type="email" placeholder="nome@azienda.it" autocomplete="email" required />
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="citta-a">Città (opzionale)</label>
+            <input class="form-input" id="citta-a" type="text" placeholder="Milano" autocomplete="address-level2" />
+          </div>
+          <button class="form-submit" type="submit">Lascia la tua mail →</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Three Actors A -->
+    <section class="three-actors" id="per-chi" aria-labelledby="actors-a-title">
+      <div class="three-actors__inner">
+        <div class="section-heading">
+          <p class="label">Una piattaforma, tre attori</p>
+          <h2 id="actors-a-title" class="heading-2">Tre esigenze diverse, una sola piattaforma.</h2>
+          <p>
+            Woofare <strong>unisce aziende, dipendenti e pet-services in un unico ecosistema</strong>:
+            l'azienda attiva il servizio, il dipendente usa il benefit per un bisogno concreto,
+            il pet-service entra in relazione con una domanda aziendale qualificata.
+          </p>
+        </div>
+        <div class="actors-grid">
+          <div class="actor-card">
+            <div class="illustration illustration--actor-azienda">
+              <img loading="lazy" src="imgs/actor-azienda.svg" alt="" aria-hidden="true" width="119" height="120" />
+            </div>
+            <p class="actor-card__title">Azienda</p>
+            <p class="actor-card__desc">Attiva il servizio, assegna il budget, monitora l'utilizzo.</p>
+          </div>
+          <div class="actor-card">
+            <div class="illustration illustration--actor-dipendente">
+              <img loading="lazy" src="imgs/actor-dipendente.svg" alt="" aria-hidden="true" width="90" height="120" />
+            </div>
+            <p class="actor-card__title">Dipendente</p>
+            <p class="actor-card__desc">Accede al wallet, sceglie il servizio, usa il benefit.</p>
+          </div>
+          <div class="actor-card">
+            <div class="illustration illustration--actor-pet">
+              <img loading="lazy" src="imgs/actor-petservice.svg" alt="" aria-hidden="true" width="147" height="120" />
+            </div>
+            <p class="actor-card__title">Pet-Service</p>
+            <p class="actor-card__desc">Entra nel network, riceve il cliente, eroga il servizio.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /state-aziende -->
+
+
+  <!-- ═══════════════════════════════════════════════════ CONTENT STATE B -->
+  <!-- Audience: Dipendenti                                                -->
+  <div
+    id="state-dipendenti"
+    class="content-state section-wrap"
+    role="tabpanel"
+    hidden
+  >
+
+    <!-- Hero B -->
+    <section class="hero" aria-labelledby="hero-b-title">
+      <div class="hero__inner">
+        <div class="hero__copy">
+          <p class="label">Per chi lavora e ha un animale domestico</p>
+          <h1 id="hero-b-title" class="hero__title">
+            Il benefit aziendale
+            <span class="hero__title--accent">pensato per chi ha un animale domestico.</span>
+          </h1>
+          <p class="hero__body">
+            Woofare aiuta aziende, dipendenti e pet-services a trasformare il fringe benefit in
+            un servizio concreto: più serenità per chi lavora, più valore per l'azienda,
+            più opportunità per i pet-services.
+          </p>
+          <div class="btn-group">
+            <a class="btn-primary" href="#waiting-list-b">Entra in waiting list →</a>
+            <a class="btn-outline" href="#section-howto-b">Scopri come funziona</a>
+          </div>
+        </div>
+        <div class="image-block image-block--hero">
+          <div class="image-block__rotator">
+            <div class="image-block image-block--rot-pos-7">
+              <div class="image-block__frame image-block__frame--crop">
+                <img
+                  src="imgs/cta-a-mockup.png"
+                  alt="Dipendente con animale domestico"
+                  width="460" height="353"
+                />
+              </div>
+            </div>
+          </div>
+          <div class="image-block__overlay image-block__overlay--hero-vectorized">
+            <img loading="lazy" src="imgs/cta-a-overlay-vec.svg" alt="" aria-hidden="true" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats B (same content) -->
+    <section class="stats" id="problema-b" aria-labelledby="stats-b-title">
+      <div class="stats__inner">
+        <div class="section-heading">
+          <p class="label">Il contesto</p>
+          <h2 id="stats-b-title" class="heading-2">Il rientro in ufficio ha riaperto un problema reale.</h2>
+          <p>
+            Per molte persone, tornare in ufficio significa lasciare il proprio animale da solo
+            per molte ore. Questo genera stress, preoccupazione e un impatto concreto sulla
+            qualità della giornata lavorativa.
+          </p>
+        </div>
+        <div class="stats__cards">
+          <div class="stat-card">
+            <p class="stat-card__number">9/10</p>
+            <p class="stat-card__text"><span>Chiedono </span><strong>più welfare aziendale</strong></p>
+          </div>
+          <div class="stat-card">
+            <p class="stat-card__number">79%</p>
+            <p class="stat-card__text"><strong>Si preoccupa </strong><span>per il proprio </span><strong>animale</strong><span> mentre lavora</span></p>
+          </div>
+          <div class="stat-card">
+            <p class="stat-card__number">47%</p>
+            <p class="stat-card__text"><span>Prova vera</span><strong> ansia da separazione</strong></p>
+          </div>
+          <div class="stat-card">
+            <p class="stat-card__number">+30%</p>
+            <p class="stat-card__text"><span>Più probabilità di </span><strong>accettare un lavoro pet-friendly</strong></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solution B (same content, different images) -->
+    <section class="solution">
+      <div class="solution__inner">
+        <div class="solution__content">
+          <div class="solution__header">
+            <p class="label">La soluzione</p>
+            <h2 class="solution__title">
+              Una soluzione concreta,<br>
+              <span class="highlight-word">non</span> una gift card generica.
+            </h2>
+            <p class="solution__body">
+              <strong>Woofare è una piattaforma verticale dedicata ai servizi pet. </strong>
+              Aiuta le aziende a offrire un benefit ad alto valore percepito, i dipendenti a usare
+              il proprio budget su servizi davvero utili e i pet-services a intercettare clienti
+              aziendali in modo semplice.
+            </p>
+          </div>
+          <ul class="feature-list" role="list">
+            <li class="feature-item"><p><span class="feature-item__title">Wallet dedicato: </span><span class="feature-item__desc">Budget pet utilizzabile solo su servizi del network.</span></p></li>
+            <li class="feature-item"><p><span class="feature-item__title">Network verticale: </span><span class="feature-item__desc">Asili, sitter, educatori, strutture verificate.</span></p></li>
+            <li class="feature-item"><p><span class="feature-item__title">Fruizione immediata: </span><span class="feature-item__desc">Il dipendente usa il benefit direttamente sul posto.</span></p></li>
+            <li class="feature-item"><p><span class="feature-item__title">Valore percepito: </span><span class="feature-item__desc">Più impatto di un bonus in busta paga.</span></p></li>
+          </ul>
+        </div>
+        <div class="image-block image-block--section-left">
+          <div class="image-block__rotator">
+            <div class="image-block image-block--rot-neg-3">
+              <div class="image-block__frame image-block__frame--crop image-block__frame--portrait">
+                <img loading="lazy" src="imgs/hero-b-photo.png" alt="Dipendente che usa il benefit" width="384" height="564" />
+              </div>
+            </div>
+          </div>
+          <div class="image-block__overlay image-block__overlay--section-left-vec">
+            <img loading="lazy" src="imgs/benefit-b-overlay-vec.svg" alt="" aria-hidden="true" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefit B: Dipendenti -->
+    <section class="benefit" aria-labelledby="benefit-b-title">
+      <div class="benefit__intro">
+        <p class="label">Per chi lavora e ha un animale domestico</p>
+        <h2 id="benefit-b-title" class="heading-2">Vai in ufficio con più serenità.</h2>
+        <p>
+          Con Woofare trovi il benefit messo a disposizione dalla tua azienda, scegli il
+          pet-service di cui hai bisogno e usi il tuo budget in modo semplice, senza
+          anticipare nulla.
+        </p>
+        <div class="btn-group" style="justify-content:center;">
+          <a class="btn-primary" href="#waiting-list-b">Entra in waiting list →</a>
+          <a class="btn-outline" href="#segnala-b">Segnala la tua azienda</a>
+        </div>
+      </div>
+      <div class="benefit__detail">
+        <h3 class="benefit__detail-heading">Un aiuto concreto nelle giornate in cui sei fuori casa</h3>
+        <div class="benefit__content-group">
+          <div class="image-block image-block--section-right" style="position:relative;">
+            <div class="image-block__rotator">
+              <div class="image-block image-block--rot-pos-4">
+                <div class="image-block__frame image-block__frame--crop">
+                  <img src="imgs/hero-c-photo.png" alt="Persona con animale" width="607" height="433" />
+                </div>
+              </div>
+            </div>
+            <div class="image-block__overlay image-block__overlay--section-vec">
+              <img loading="lazy" src="imgs/hero-c-overlay-vec.svg" alt="" aria-hidden="true" />
+            </div>
+          </div>
+          <ul class="benefit__list feature-list" role="list">
+            <li class="feature-item"><p><span class="feature-item__title">Meno ansia durante la giornata</span><br><span class="feature-item__desc">Sai dove lasciare il tuo animale e con chi.</span></p></li>
+            <li class="feature-item"><p><span class="feature-item__title">Nessun anticipo</span><br><span class="feature-item__desc">Usi il benefit messo a disposizione dalla tua azienda.</span></p></li>
+            <li class="feature-item"><p><span class="feature-item__title">Più fiducia nella scelta</span><br><span class="feature-item__desc">Accedi a strutture e professionisti verificati.</span></p></li>
+            <li class="feature-item"><p><span class="feature-item__title">Più semplicità</span><br><span class="feature-item__desc">Cerchi, scegli e usi il servizio in pochi passaggi.</span></p></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- How-To B -->
+    <section class="how-to" id="section-howto-b" aria-labelledby="howto-b-title">
+      <div class="how-to__inner">
+        <div class="section-heading">
+          <p class="label">Come funziona</p>
+          <h2 id="howto-b-title" class="heading-2">Cerchi, scegli, prenoti. In un attimo.</h2>
+        </div>
+        <div class="illustration illustration--steps">
+          <img loading="lazy" src="imgs/howto-c-illustration.svg" alt="" aria-hidden="true" />
+        </div>
+        <div class="steps">
+          <div class="step-card">
+            <div class="step-card__badge step-card__badge--blue">1</div>
+            <p class="step-card__title">Accedi</p>
+            <p class="step-card__desc">Ti iscrivi o accedi alla piattaforma.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-card__badge step-card__badge--blue">2</div>
+            <p class="step-card__title">Vedi il tuo wallet</p>
+            <p class="step-card__desc">Vedi il budget caricato dalla tua azienda.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-card__badge step-card__badge--blue">3</div>
+            <p class="step-card__title">Cerchi il servizio</p>
+            <p class="step-card__desc">Scegli il pet-service più adatto alle tue esigenze.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-card__badge step-card__badge--orange">4</div>
+            <p class="step-card__title">Usi il benefit</p>
+            <p class="step-card__desc">Paghi direttamente col wallet, senza anticipare nulla.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- App section B -->
+    <section class="dashboard" aria-labelledby="app-b-title">
+      <div class="dashboard__inner">
+        <p class="label dashboard__eyebrow">App dipendente</p>
+        <h2 id="app-b-title" class="dashboard__title">Il tuo benefit, sempre con te.</h2>
+        <div class="dashboard__mockup-wrap">
+          <img
+            class="mockup-main"
+            src="imgs/cta-c-mockup.png"
+            alt="Mockup app dipendente Woofare"
+            width="1012" height="675"
+          />
+        </div>
+        <div class="info-chips-grid">
+          <div class="info-chip"><span class="info-chip__dot"></span>Saldo del wallet sempre visibile</div>
+          <div class="info-chip"><span class="info-chip__dot"></span>Badge "verificato" per sapere di chi ti fidi</div>
+          <div class="info-chip"><span class="info-chip__dot"></span>Mappa dei pet-services vicini</div>
+          <div class="info-chip"><span class="info-chip__dot"></span>Dettaglio servizio, pagamento e storico</div>
+        </div>
+        <p class="dashboard__note">
+          Stiamo attivamente lavorando per <strong>creare la Dashboard perfetta per te.</strong>
+          Hai idee, necessità o suggerimenti? Scrivici! Vogliamo realizzare un prodotto di cui
+          ti possa innamorare.
+        </p>
+      </div>
+    </section>
+
+    <!-- Comparison B -->
+    <section class="comparison" id="risparmio-b" aria-labelledby="comparison-b-title">
+      <div class="comparison__inner" style="gap:var(--gap-content);">
+        <div class="comparison__header">
+          <p class="label">Confronto economico</p>
+          <h2 id="comparison-b-title" class="heading-2">Più soldi in busta o un budget che usi davvero tutto?</h2>
+          <p style="font-size:var(--size-body-lg);line-height:var(--lh-body-lg);color:var(--color-text-mid);max-width:var(--max-text);">
+            Con Woofare il messaggio è immediato: se la tua azienda ti assegna 1.000€,
+            puoi spendere 1.000€ in servizi pet.
+          </p>
+        </div>
+        <div class="comparison__cards">
+          <div class="comparison-card comparison-card--base">
+            <p class="comparison-card__eyebrow">Aumento in busta paga</p>
+            <p class="comparison-card__heading">1.000€ lordi</p>
+            <div class="comparison-card__amount">
+              <span class="comparison-card__amount-big">1.000€</span>
+              <span class="comparison-card__amount-sub">≈ 520€ netti</span>
+            </div>
+            <ul class="comparison-card__list" role="list">
+              <li class="comparison-card__list-item"><span class="comparison-card__bullet"></span>L'importo si riduce</li>
+              <li class="comparison-card__list-item"><span class="comparison-card__bullet"></span>Si disperde nelle spese quotidiane</li>
+              <li class="comparison-card__list-item"><span class="comparison-card__bullet"></span>Non ti aiuta a trovare una soluzione specifica</li>
+            </ul>
+          </div>
+          <div class="comparison-card comparison-card--woofare">
+            <p class="comparison-card__eyebrow">Benefit Woofare</p>
+            <p class="comparison-card__heading">1.000€ in servizi pet</p>
+            <div class="comparison-card__amount">
+              <span class="comparison-card__amount-big">1.000€</span>
+              <span class="comparison-card__amount-sub">tutti spendibili</span>
+            </div>
+            <ul class="comparison-card__list" role="list">
+              <li class="comparison-card__list-item"><span class="comparison-card__bullet"></span>Usi tutto il budget che ti viene assegnato</li>
+              <li class="comparison-card__list-item"><span class="comparison-card__bullet"></span>Lo spendi per un bisogno reale</li>
+              <li class="comparison-card__list-item"><span class="comparison-card__bullet"></span>Non devi anticipare il costo</li>
+              <li class="comparison-card__list-item"><span class="comparison-card__bullet"></span>Puoi usare il servizio in modo semplice</li>
+            </ul>
+          </div>
+        </div>
+        <p class="comparison__footnote">
+          Quando il problema è concreto e ricorrente, conta poter usare davvero tutto il budget disponibile.
+        </p>
+      </div>
+    </section>
+
+    <!-- CTA Form B -->
+    <section class="cta-form" id="waiting-list-b" aria-labelledby="cta-b-title">
+      <div class="cta-form__inner">
+        <div class="cta-form__copy">
+          <p class="label">Waiting list</p>
+          <h2 id="cta-b-title" class="cta-form__title">Vuoi vedere Woofare nella tua azienda?</h2>
+          <p class="cta-form__body">Lasciaci la tua mail per entrare nella waiting list e aiutarci a capire dove attivare prima il servizio.</p>
+          <div class="contact-links">
+            <a class="contact-link" href="mailto:info@woofare.it">✉ info@woofare.it</a>
+            <a class="contact-link" href="https://wa.me/">💬 WhatsApp</a>
+            <a class="contact-link" href="#prenota">📞 Prenota una call</a>
+          </div>
+        </div>
+        <form class="cta-form__form" novalidate>
+          <div class="form-field">
+            <label class="form-label" for="email-b">Email *</label>
+            <input class="form-input" id="email-b" type="email" placeholder="nome@azienda.it" autocomplete="email" required />
+          </div>
+          <div class="form-field">
+            <label class="form-label" for="citta-b">Città (opzionale)</label>
+            <input class="form-input" id="citta-b" type="text" placeholder="Milano" autocomplete="address-level2" />
+          </div>
+          <button class="form-submit" type="submit">Lascia la tua mail →</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Three Actors B (same content, same images as A) -->
+    <section class="three-actors" id="per-chi-b" aria-labelledby="actors-b-title">
+      <div class="three-actors__inner">
+        <div class="section-heading">
+          <p class="label">Una piattaforma, tre attori</p>
+          <h2 id="actors-b-title" class="heading-2">Tre esigenze diverse, una sola piattaforma.</h2>
+          <p>
+            Woofare <strong>unisce aziende, dipendenti e pet-services in un unico ecosistema</strong>:
+            l'azienda attiva il servizio, il dipendente usa il benefit per un bisogno concreto,
+            il pet-service entra in relazione con una domanda aziendale qualificata.
+          </p>
+        </div>
+        <div class="actors-grid">
+          <div class="actor-card">
+            <div class="illustration illustration--actor-azienda">
+              <img loading="lazy" src="imgs/actor-azienda-b.svg" alt="" aria-hidden="true" width="119" height="120" />
+            </div>
+            <p class="actor-card__title">Azienda</p>
+            <p class="actor-card__desc">Attiva il servizio, assegna il budget, monitora l'utilizzo.</p>
+          </div>
+          <div class="actor-card">
+            <div class="illustration illustration--actor-dipendente">
+              <img loading="lazy" src="imgs/actor-dipendente-b.svg" alt="" aria-hidden="true" width="90" height="120" />
+            </div>
+            <p class="actor-card__title">Dipendente</p>
+            <p class="actor-card__desc">Accede al wallet, sceglie il servizio, usa il benefit.</p>
+          </div>
+          <div class="actor-card">
+            <div class="illustration illustration--actor-pet">
+              <img loading="lazy" src="imgs/actor-petservice-b.svg" alt="" aria-hidden="true" width="147" height="120" />
+            </div>
+            <p class="actor-card__title">Pet-Service</p>
+            <p class="actor-card__desc">Entra nel network, riceve il cliente, eroga il servizio.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /state-dipendenti -->
+
+
+  <!-- ═══════════════════════════════════════════════ CONTENT STATE C -->
+  <!-- Audience: Pet-Services                                          -->
+  <div
+    id="state-pet-services"
+    class="content-state section-wrap"
+    role="tabpanel"
+    hidden
+  >
+
+    <!-- Hero C -->
+    <section class="hero" aria-labelledby="hero-c-title">
+      <div class="hero__inner">
+        <div class="hero__copy">
+          <p class="label">Per asili, sitter, educatori, strutture</p>
+          <h1 id="hero-c-title" class="hero__title">
+            Il benefit aziendale
+            <span class="hero__title--accent">pensato per chi ha un animale domestico.</span>
+          </h1>
+          <p class="hero__body">
+            Woofare aiuta aziende, dipendenti e pet-services a trasformare il fringe benefit in
+            un servizio concreto: più serenità per chi lavora, più valore per l'azienda,
+            più opportunità per i pet-services.
+          </p>
+          <div class="btn-group">
+            <a class="btn-primary" href="#waiting-list-c">Entra in waiting list →</a>
+            <a class="btn-outline" href="#section-howto-c">Scopri come funziona</a>
+          </div>
+        </div>
+        <div class="image-block image-block--hero">
+          <div class="image-block__rotator">
+            <div class="image-block image-block--rot-pos-7">
+              <div class="image-block__frame image-block__frame--crop">
+                <img loading="lazy" src="imgs/benefit-c-photo.png" alt="Pet-service professionale" width="460" height="353" />
+              </div>
+            </div>
+          </div>
+          <div class="image-block__overlay image-block__overlay--hero-vectorized">
+            <img loading="lazy" src="imgs/benefit-c-overlay-vec.svg" alt="" aria-hidden="true" />
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stats C (same) -->
+    <section class="stats" id="problema-c" aria-labelledby="stats-c-title">
+      <div class="stats__inner">
+        <div class="section-heading">
+          <p class="label">Il contesto</p>
+          <h2 id="stats-c-title" class="heading-2">Il rientro in ufficio ha riaperto un problema reale.</h2>
+          <p>
+            Per molte persone, tornare in ufficio significa lasciare il proprio animale da solo
+            per molte ore. Questo genera stress, preoccupazione e un impatto concreto sulla
+            qualità della giornata lavorativa.
+          </p>
+        </div>
+        <div class="stats__cards">
+          <div class="stat-card"><p class="stat-card__number">9/10</p><p class="stat-card__text"><span>Chiedono </span><strong>più welfare aziendale</strong></p></div>
+          <div class="stat-card"><p class="stat-card__number">79%</p><p class="stat-card__text"><strong>Si preoccupa </strong><span>per il proprio </span><strong>animale</strong><span> mentre lavora</span></p></div>
+          <div class="stat-card"><p class="stat-card__number">47%</p><p class="stat-card__text"><span>Prova vera</span><strong> ansia da separazione</strong></p></div>
+          <div class="stat-card"><p class="stat-card__number">+30%</p><p class="stat-card__text"><span>Più probabilità di </span><strong>accettare un lavoro pet-friendly</strong></p></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Solution C (same, different images) -->
+    <section class="solution">
+      <div class="solution__inner">
+        <div class="image-block image-block--section-left">
+          <div class="image-block__rotator">
+            <div class="image-block image-block--rot-neg-3">
+              <div class="image-block__frame image-block__frame--crop">
+                <img loading="lazy" src="imgs/solution-c-photo.png" alt="Struttura pet-service" width="384" height="564" />
+              </div>
+            </div>
+          </div>
+          <div class="image-block__overlay image-block__overlay--section-left-vec">
+            <img loading="lazy" src="imgs/solution-c-overlay-vec.svg" alt="" aria-hidden="true" />
+          </div>
+        </div>
+        <div class="solution__content">
+          <div class="solution__header">
+            <p class="label">La soluzione</p>
+            <h2 class="solution__title">
+              Una soluzione concreta,<br>
+              <span class="highlight-word">non</span> una gift card generica.
+            </h2>
+            <p class="solution__body">
+              <strong>Woofare è una piattaforma verticale dedicata ai servizi pet. </strong>
+              Aiuta le aziende a offrire un benefit ad alto valore percepito, i dipendenti a usare
+              il proprio budget su servizi davvero utili e i pet-services a intercettare clienti
+              aziendali in modo semplice.
+            </p>
+          </div>
+          <ul class="feature-list" role="list">
+            <li class="feature-item"><p><span class="feature-item__title">Wallet dedicato: </span><span class="feature-item__desc">Budget pet utilizzabile solo su servizi del network.</span></p></li>
+            <li class="feature-item"><p><span class="feature-item__title">Network verticale: </span><span class="feature-item__desc">Asili, sitter, educatori, strutture verificate.</span></p></li>
+            <li class="feature-item"><p><span class="feature-item__title">Fruizione immediata: </span><span class="feature-item__desc">Il dipendente usa il benefit direttamente sul posto.</span></p></li>
+            <li class="feature-item"><p><span class="feature-item__title">Valore percepito: </span><span class="feature-item__desc">Più impatto di un bonus in busta paga.</span></p></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- Benefit C: Pet-Services specific -->
+    <section class="benefit" id="zero-costi" aria-labelledby="benefit-c-title">
+      <div class="benefit__intro">
+        <p class="label">Per asili, pet-sitter, educatori e strutture</p>
+        <h2 id="benefit-c-title" class="heading-2">Entra gratis nel network e paga solo quando lavori.</h2>
+        <p>
+          Con Woofare puoi creare la tua presenza sulla piattaforma, farti trovare da clienti
+          aziendali e ricevere richieste senza costi di ingresso.
+        </p>
+        <div class="btn-group" style="justify-content:center;">
+          <a class="btn-primary" href="#waiting-list-c">Candidati come partner →</a>
+        </div>
+      </div>
+
+      <!-- Pay-per-performance card -->
+      <div class="ppp-card">
+        <div class="ppp-card__copy">
+          <p class="label" style="color:var(--color-accent-light);">Pay-per-performance</p>
+          <h2 class="ppp-card__title">Iscrizione gratuita.<br>Paghi una piccola percentuale solo quando lavori.</h2>
+          <p class="ppp-card__body">
+            Non paghi per comparire: riconosci una commissione solo quando ricevi un cliente
+            e il servizio viene effettivamente utilizzato. Un modello pensato per ridurre
+            il rischio di ingresso.
+          </p>
+          <ul class="ppp-card__list" role="list">
+            <li class="ppp-card__list-item">Nessun costo di iscrizione</li>
+            <li class="ppp-card__list-item">Nessun canone per esserci</li>
+            <li class="ppp-card__list-item">Paghi solo quando lavori</li>
+            <li class="ppp-card__list-item">Accesso a clienti aziendali</li>
+          </ul>
+        </div>
+        <div class="ppp-card__price">
+          <p class="ppp-card__price-amount">0€</p>
+          <p class="ppp-card__price-label">Ingresso</p>
+        </div>
+      </div>
+
+      <!-- Network benefit cards -->
+      <div class="section-heading" style="margin-top:var(--gap-content);" id="network">
+        <p class="label">Perché entrare nel network</p>
+        <h2 class="heading-2">Più visibilità, più credibilità, più clienti.</h2>
+      </div>
+      <div class="network-cards">
+        <div class="network-card">
+          <div class="benefit-card__photo">
+            <img loading="lazy" src="imgs/network-card-1.png" alt="Pet-service accoglie un cliente" width="212" height="212" />
+          </div>
+          <div class="network-card__text">
+            <p class="network-card__title">Nuovi clienti aziendali</p>
+            <p class="network-card__desc">Accedi a una domanda corporate strutturata.</p>
+          </div>
+        </div>
+        <div class="network-card">
+          <div class="benefit-card__photo">
+            <img loading="lazy" src="imgs/network-card-2.png" alt="App mobile Woofare" width="212" height="212" />
+          </div>
+          <div class="network-card__text">
+            <p class="network-card__title">Presenza nel network</p>
+            <p class="network-card__desc">Aumenti visibilità e fiducia presso utenti e aziende.</p>
+          </div>
+        </div>
+        <div class="network-card">
+          <div class="benefit-card__photo">
+            <img loading="lazy" src="imgs/network-card-3.png" alt="Gestione prezzi" width="212" height="212" />
+          </div>
+          <div class="network-card__text">
+            <p class="network-card__title">Controllo della tua offerta</p>
+            <p class="network-card__desc">Decidi servizi, disponibilità e prezzi.</p>
+          </div>
+        </div>
+        <div class="network-card">
+          <div class="benefit-card__photo">
+            <img loading="lazy" src="imgs/network-card-4.png" alt="Servizi aggiuntivi" width="212" height="212" />
+          </div>
+          <div class="network-card__text">
+            <p class="network-card__title">Opportunità di upselling</p>
+            <p class="network-card__desc">Puoi valorizzare servizi aggiuntivi collegati alla tua attività.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- How-To C -->
+    <section class="how-to" id="section-howto-c" aria-labelledby="howto-c-title">
+      <div class="how-to__inner">
+        <div class="section-heading">
+          <p class="label">Come funziona</p>
+          <h2 id="howto-c-title" class="heading-2">Dalla candidatura al primo pagamento.</h2>
+        </div>
+        <div class="illustration illustration--steps">
+          <img loading="lazy" src="imgs/verified-illustration.svg" alt="" aria-hidden="true" />
+        </div>
+        <div class="steps">
+          <div class="step-card">
+            <div class="step-card__badge step-card__badge--blue">1</div>
+            <p class="step-card__title">Ti iscrivi</p>
+            <p class="step-card__desc">Creazione account gratuita, senza canoni.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-card__badge step-card__badge--blue">2</div>
+            <p class="step-card__title">Crei la pagina</p>
+            <p class="step-card__desc">Inserisci servizi, disponibilità e prezzi.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-card__badge step-card__badge--blue">3</div>
+            <p class="step-card__title">Verifica</p>
+            <p class="step-card__desc">Completi i requisiti per entrare nel network.</p>
+          </div>
+          <div class="step-card">
+            <div class="step-card__badge step-card__badge--orange">4</div>
+            <p class="step-card__title">Lavori e incassi</p>
+            <p class="step-card__desc">Il servizio viene usato tramite benefit, tu ricevi il pagamento.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Partner Dashboard C -->
+    <section class="dashboard" aria-labelledby="partner-dashboard-title">
+      <div class="dashboard__inner">
+        <p class="label dashboard__eyebrow">Partner dashboard</p>
+        <h2 id="partner-dashboard-title" class="dashboard__title">Gestisci la tua attività in un'unica area.</h2>
+        <div class="dashboard__screenshot">
+          <img
+            src="imgs/partner-dashboard-screenshot.png"
+            alt="Screenshot della partner dashboard di Woofare"
+            width="970" height="646"
+          />
+        </div>
+        <div class="info-chips-grid">
+          <div class="info-chip"><span class="info-chip__dot"></span>Profilo struttura e stato verifica</div>
+          <div class="info-chip"><span class="info-chip__dot"></span>Servizi attivi e prezzi</div>
+          <div class="info-chip"><span class="info-chip__dot"></span>Richieste ricevute e voucher gestiti</div>
+          <div class="info-chip"><span class="info-chip__dot"></span>Pagamenti ricevuti e cronologia</div>
+        </div>
+        <p class="dashboard__note">
+          Stiamo attivamente lavorando per <strong>creare la Dashboard perfetta per te.</strong>
+          Hai idee, necessità o suggerimenti? Scrivici! Vogliamo realizzare un prodotto di cui
+          ti possa innamorare.
+        </p>
+      </div>
+    </section>
+
+    <!-- Verified C -->
+    <section class="benefit" aria-labelledby="verified-title">
+      <div class="verified-section">
+        <div class="verified-section__copy">
+          <p class="label">Trasparenza e fiducia</p>
+          <h2 id="verified-title" class="heading-2">Cosa vuol dire "verificato".</h2>
+          <p>
+            Woofare vuole costruire un network affidabile e riconoscibile. L'ingresso in
+            piattaforma prevede una verifica documentale e operativa chiara. La logica è
+            garantire affidabilità e qualità del servizio.
+          </p>
+        </div>
+        <ul class="verified-list" role="list">
+          <li class="verified-list__item">
+            <span class="verified-list__check" aria-hidden="true">✓</span>
+            Regolarità dell'attività
+          </li>
+          <li class="verified-list__item">
+            <span class="verified-list__check" aria-hidden="true">✓</span>
+            Copertura assicurativa
+          </li>
+          <li class="verified-list__item">
+            <span class="verified-list__check" aria-hidden="true">✓</span>
+            Documentazione essenziale
+          </li>
+          <li class="verified-list__item">
+            <span class="verified-list__check" aria-hidden="true">✓</span>
+            Informazioni sulla struttura o sul servizio
+          </li>
+          <li class="verified-list__item">
+            <span class="verified-list__check" aria-hidden="true">✓</span>
+            Requisiti necessari per entrare nel network
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- CTA Form C -->
+    <section class="cta-form" id="waiting-list-c" aria-labelledby="cta-c-title">
+      <div class="cta-form__inner">
+        <div class="cta-form__copy">
+          <p class="label">Diventa partner</p>
+          <h2 id="cta-c-title" class="cta-form__title">Vuoi entrare tra i primi partner del network?</h2>
+          <p class="cta-form__body">
+            Se offri servizi pet-care e vuoi intercettare clienti aziendali, lasciaci il tuo contatto.
+          </p>
+          <div class="contact-links">
+            <a class="contact-link" href="mailto:info@woofare.it">✉ info@woofare.it</a>
+            <a class="contact-link" href="https://wa.me/">💬 WhatsApp</a>
+            <a class="contact-link" href="#prenota">📞 Prenota una call</a>
+          </div>
+        </div>
+        <form class="cta-form__form" novalidate>
+          <div class="form-field">
+            <label class="form-label" for="email-c">Email *</label>
+            <input class="form-input" id="email-c" type="email" placeholder="nome@azienda.it" autocomplete="email" required />
+          </div>
+          <div class="form-field__row">
+            <div class="form-field">
+              <label class="form-label" for="citta-c">Città (opzionale)</label>
+              <input class="form-input" id="citta-c" type="text" placeholder="Milano" autocomplete="address-level2" />
+            </div>
+            <div class="form-field">
+              <label class="form-label" for="tipo-c">Tipo di servizio</label>
+              <select class="form-select" id="tipo-c">
+                <option value="">Seleziona…</option>
+                <option value="asilo">Asilo</option>
+                <option value="sitter">Pet-Sitter</option>
+                <option value="educatore">Educatore</option>
+                <option value="struttura">Struttura</option>
+                <option value="altro">Altro</option>
+              </select>
+            </div>
+          </div>
+          <button class="form-submit" type="submit">Lascia la tua mail →</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- Three Actors C -->
+    <section class="three-actors" id="per-chi-c" aria-labelledby="actors-c-title">
+      <div class="three-actors__inner">
+        <div class="section-heading">
+          <p class="label">Una piattaforma, tre attori</p>
+          <h2 id="actors-c-title" class="heading-2">Tre esigenze diverse, una sola piattaforma.</h2>
+          <p>
+            Woofare <strong>unisce aziende, dipendenti e pet-services in un unico ecosistema</strong>:
+            l'azienda attiva il servizio, il dipendente usa il benefit per un bisogno concreto,
+            il pet-service entra in relazione con una domanda aziendale qualificata.
+          </p>
+        </div>
+        <div class="actors-grid">
+          <div class="actor-card">
+            <div class="illustration illustration--actor-azienda">
+              <img loading="lazy" src="imgs/actor-azienda-c.svg" alt="" aria-hidden="true" width="119" height="120" />
+            </div>
+            <p class="actor-card__title">Azienda</p>
+            <p class="actor-card__desc">Attiva il servizio, assegna il budget, monitora l'utilizzo.</p>
+          </div>
+          <div class="actor-card">
+            <div class="illustration illustration--actor-dipendente">
+              <img loading="lazy" src="imgs/actor-dipendente-c.svg" alt="" aria-hidden="true" width="90" height="120" />
+            </div>
+            <p class="actor-card__title">Dipendente</p>
+            <p class="actor-card__desc">Accede al wallet, sceglie il servizio, usa il benefit.</p>
+          </div>
+          <div class="actor-card">
+            <div class="illustration illustration--actor-pet">
+              <img loading="lazy" src="imgs/actor-petservice-c.svg" alt="" aria-hidden="true" width="147" height="120" />
+            </div>
+            <p class="actor-card__title">Pet-Service</p>
+            <p class="actor-card__desc">Entra nel network, riceve il cliente, eroga il servizio.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </div><!-- /state-pet-services -->
+
+
+  <!-- ═══════════════════════════════════════════════════════════ FOOTER -->
+  <footer class="footer section-wrap">
+    <div class="footer__inner">
+      <img
+        class="footer__logo"
+        src="imgs/logo-woofare.png"
+        alt="Woofare"
+        width="133"
+        height="34"
+      />
+      <div class="footer__meta">
+        <p>© 2026 Woofare · Il benefit pensato per chi ha un animale domestico</p>
+        <p class="footer__contacts">
+          <strong>Contatti: </strong>
+          <a href="mailto:info@woofare.it">info@woofare.it</a>
+        </p>
+      </div>
+    </div>
+  </footer>
+
+</div><!-- /page-shell -->
+
+<script src="js/main.js" defer></script>
+</body>
+</html>

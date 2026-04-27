@@ -1,0 +1,166 @@
+/* ─── Comparison Section ─────────────────────────────────────────────────── */
+/* Two-column: left = "busta paga" (white), right = "Woofare" (accent red).   */
+
+.comparison {
+  width: 100%;
+  padding-inline: 28px;
+}
+
+.comparison__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-sections);
+}
+
+/* ─── Header ────────────────────────────────────────────────────────────── */
+
+.comparison__header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  text-align: center;
+}
+
+/* ─── Cards row ─────────────────────────────────────────────────────────── */
+
+.comparison__cards {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  gap: var(--gap-cards);
+  width: var(--max-content);
+}
+
+/* ─── Base comparison card ──────────────────────────────────────────────── */
+
+.comparison-card {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  padding: 37px;
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card-0);
+  flex: 1;
+  min-width: 0;
+}
+
+.comparison-card--base {
+  background-color: var(--color-white);
+}
+
+.comparison-card--woofare {
+  background-color: var(--color-accent);
+}
+
+/* ─── Card header ───────────────────────────────────────────────────────── */
+
+.comparison-card__eyebrow {
+  font-size: var(--size-label);
+  font-weight: 800;
+  line-height: var(--lh-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+}
+
+.comparison-card--base    .comparison-card__eyebrow { color: var(--color-accent); }
+.comparison-card--woofare .comparison-card__eyebrow { color: var(--color-accent-light); }
+
+.comparison-card__heading {
+  font-family: var(--font-heading);
+  font-size: var(--size-h4);
+  line-height: var(--lh-h4);
+  letter-spacing: var(--tracking-h);
+}
+
+.comparison-card--base    .comparison-card__heading { color: var(--color-dark); }
+.comparison-card--woofare .comparison-card__heading { color: var(--color-white); }
+
+/* ─── Amount display ────────────────────────────────────────────────────── */
+
+.comparison-card__amount {
+  display: flex;
+  align-items: flex-end;
+  gap: 6px;
+  position: relative;
+  height: 56px;
+}
+
+.comparison-card__amount-big {
+  font-family: var(--font-heading);
+  font-size: var(--size-stat);
+  line-height: var(--size-stat);
+}
+
+.comparison-card--base .comparison-card__amount-big {
+  opacity: 0.65;
+  text-decoration: line-through;
+  text-decoration-thickness: 2px;
+  color: var(--color-dark);
+}
+
+.comparison-card--woofare .comparison-card__amount-big {
+  color: var(--color-bg);
+}
+
+.comparison-card__amount-sub {
+  font-family: var(--font-heading);
+  font-size: 22px;
+  line-height: 22px;
+  padding-bottom: 4px;
+}
+
+.comparison-card--base    .comparison-card__amount-sub { color: var(--color-text-light); }
+.comparison-card--woofare .comparison-card__amount-sub { color: var(--color-white); }
+
+/* ─── Bullet list ───────────────────────────────────────────────────────── */
+
+.comparison-card__list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  list-style: none;
+  flex: 1;
+}
+
+.comparison-card__list-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 17px;
+  line-height: 26.35px;
+  font-weight: 400;
+}
+
+.comparison-card--base    .comparison-card__list-item { color: var(--color-text-dark); }
+.comparison-card--woofare .comparison-card__list-item { color: var(--color-white); }
+
+.comparison-card__bullet {
+  flex-shrink: 0;
+  width: 22px;
+  height: 22px;
+  border-radius: 11px;
+}
+
+.comparison-card--base .comparison-card__bullet {
+  background-color: #fbdcd3; /* salmon tint from Figma */
+}
+
+.comparison-card--woofare .comparison-card__bullet {
+  background-color: rgba(255, 255, 255, 0.12);
+}
+
+/* ─── Section footnote ──────────────────────────────────────────────────── */
+
+.comparison__footnote {
+  text-align: center;
+  font-size: var(--size-body);
+  line-height: var(--lh-body);
+  color: var(--color-text-mid);
+}
+
+.comparison__footnote strong {
+  font-weight: 700;
+  color: var(--color-text-mid);
+}

@@ -1,0 +1,264 @@
+/* ─── PageShell ──────────────────────────────────────────────────────────── */
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: var(--nav-height);
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text-dark);
+  font-family: var(--font-body);
+  font-size: var(--size-body);
+  line-height: var(--lh-body);
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  background: none;
+  font: inherit;
+}
+
+/* ─── Page wrapper ─────────────────────────────────────────────────────── */
+
+.page-shell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--color-bg);
+  overflow-x: hidden;
+  padding-top: var(--nav-height);
+}
+
+/* ─── Section container (shared horizontal padding) ───────────────────── */
+
+.section-wrap {
+  width: 100%;
+  max-width: calc(var(--max-content) + var(--padding-page) * 2);
+  padding-inline: var(--padding-page);
+  margin-inline: auto;
+}
+
+/* ─── Content states ───────────────────────────────────────────────────── */
+
+.content-state {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--gap-sections);
+  width: 100%;
+  padding-bottom: var(--gap-sections);
+}
+
+.content-state[hidden] {
+  display: none;
+}
+
+/* ─── Label (overline / eyebrow text) ─────────────────────────────────── */
+
+.label {
+  font-family: var(--font-body);
+  font-size: var(--size-label);
+  font-weight: 800;
+  line-height: var(--lh-label);
+  letter-spacing: var(--tracking-label);
+  text-transform: uppercase;
+  color: var(--color-accent);
+}
+
+/* ─── Headings ─────────────────────────────────────────────────────────── */
+
+.heading-1 {
+  font-family: var(--font-heading);
+  font-size: var(--size-h1);
+  line-height: var(--lh-h1);
+  letter-spacing: var(--tracking-h);
+  color: var(--color-dark);
+}
+
+.heading-2 {
+  font-family: var(--font-heading);
+  font-size: var(--size-h2);
+  line-height: var(--lh-h2);
+  letter-spacing: var(--tracking-h);
+  color: var(--color-dark);
+}
+
+.heading-3 {
+  font-family: var(--font-heading);
+  font-size: var(--size-h3);
+  line-height: var(--lh-h3);
+  letter-spacing: var(--tracking-h);
+  color: var(--color-dark);
+}
+
+.heading-4 {
+  font-family: var(--font-heading);
+  font-size: var(--size-h5);
+  line-height: var(--lh-h5);
+  letter-spacing: var(--tracking-h);
+  color: var(--color-dark);
+}
+
+/* ─── Inline highlight (the "non" styled word) ─────────────────────────── */
+
+.highlight-word {
+  display: inline-block;
+  background-color: var(--color-accent-pale);
+  border-radius: 10px;
+  padding-inline: 10px;
+  box-shadow: 0px 4px 0px rgba(0, 0, 0, 0.08);
+}
+
+/* ─── CTA Buttons ──────────────────────────────────────────────────────── */
+
+.btn-primary {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-blue);
+  color: var(--color-bg);
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 26.35px;
+  padding: 18px 28px;
+  border-radius: var(--radius-pill);
+  border: 2px solid transparent;
+  box-shadow: var(--shadow-btn);
+  white-space: nowrap;
+  transition: var(--transition-tab);
+}
+
+.btn-primary:hover {
+  background-color: var(--color-blue-deep);
+}
+
+.btn-outline {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--color-blue);
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 800;
+  line-height: 26.35px;
+  padding: 18px 28px;
+  border-radius: var(--radius-pill);
+  border: 2px solid var(--color-blue);
+  white-space: nowrap;
+  transition: var(--transition-tab);
+}
+
+.btn-outline:hover {
+  background-color: var(--color-blue);
+  color: var(--color-white);
+}
+
+.btn-group {
+  display: flex;
+  gap: 30px;
+  flex-wrap: wrap;
+}
+
+/* ─── Info chip (bullet + label) ───────────────────────────────────────── */
+
+.info-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--gap-sm);
+  background-color: var(--color-white);
+  padding: 12px;
+  border-radius: var(--radius-chip);
+  box-shadow: var(--shadow-card-0);
+  font-family: var(--font-body);
+  font-size: var(--size-body);
+  font-weight: 700;
+  line-height: var(--lh-body);
+  color: var(--color-text-dark);
+  white-space: nowrap;
+}
+
+.info-chip__dot {
+  flex-shrink: 0;
+  width: 10px;
+  height: 10px;
+  border-radius: var(--radius-sm);
+  background-color: var(--color-accent);
+}
+
+.info-chips-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--gap-sm);
+  width: 100%;
+}
+
+/* ─── Section heading block (centered) ────────────────────────────────── */
+
+.section-heading {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+  text-align: center;
+}
+
+.section-heading .heading-2,
+.section-heading .heading-3 {
+  max-width: var(--max-text);
+}
+
+.section-heading p {
+  max-width: var(--max-text);
+  font-size: var(--size-body-lg);
+  line-height: var(--lh-body-lg);
+  color: var(--color-text-mid);
+}
+
+/* ─── Contact links row ────────────────────────────────────────────────── */
+
+.contact-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--gap-xs);
+}
+
+.contact-link {
+  display: inline-flex;
+  align-items: center;
+  background-color: rgba(255, 255, 255, 0.08);
+  color: var(--color-white);
+  font-family: var(--font-body);
+  font-size: var(--size-label);
+  font-weight: 700;
+  line-height: var(--lh-label);
+  padding: 10px 14px;
+  border-radius: var(--radius-pill);
+  white-space: nowrap;
+  transition: background 150ms ease;
+}
+
+.contact-link:hover {
+  background-color: rgba(255, 255, 255, 0.15);
+}

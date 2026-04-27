@@ -1,0 +1,140 @@
+/* ─── CTA Form Section ───────────────────────────────────────────────────── */
+/* Dark background, two-column: copy left + form right.                       */
+
+.cta-form {
+  width: 100%;
+}
+
+.cta-form__inner {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  overflow: hidden;
+  padding: 64px;
+  background-color: var(--color-dark);
+  border-radius: var(--radius-card);
+}
+
+/* ─── Left copy ─────────────────────────────────────────────────────────── */
+
+.cta-form__copy {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  flex: 1;
+  min-width: 0;
+}
+
+.cta-form__copy .label {
+  color: var(--color-accent-light);
+}
+
+.cta-form__title {
+  font-family: var(--font-heading);
+  font-size: var(--size-h2);
+  line-height: var(--lh-h2);
+  letter-spacing: var(--tracking-h);
+  color: var(--color-white);
+  max-width: 555px;
+}
+
+.cta-form__body {
+  font-size: var(--size-body);
+  line-height: var(--lh-body);
+  font-weight: 400;
+  color: var(--color-white);
+  max-width: 540px;
+}
+
+/* ─── Right form card ───────────────────────────────────────────────────── */
+
+.cta-form__form {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding: 22px;
+  background-color: var(--color-white);
+  border-radius: var(--radius-form);
+  width: 462px;
+  flex-shrink: 0;
+}
+
+/* ─── Field group ───────────────────────────────────────────────────────── */
+
+.form-field {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.form-field__row {
+  display: flex;
+  gap: 11px;
+}
+
+.form-field__row .form-field {
+  flex: 1;
+  min-width: 0;
+}
+
+.form-label {
+  font-family: var(--font-body);
+  font-size: 13px;
+  font-weight: 800;
+  line-height: 20.15px;
+  letter-spacing: 1.3px;
+  text-transform: uppercase;
+  color: var(--color-text-light);
+}
+
+.form-input,
+.form-select {
+  width: 100%;
+  height: 53.5px;
+  padding: 14px 16px;
+  background-color: var(--color-form-bg);
+  border: 2px solid var(--color-form-border);
+  border-radius: var(--radius-input);
+  font-family: var(--font-body);
+  font-size: var(--size-body-sm);
+  font-weight: 400;
+  color: var(--color-text-dark);
+  appearance: none;
+  outline: none;
+  transition: border-color 150ms ease;
+}
+
+.form-input::placeholder {
+  color: #757575;
+}
+
+.form-input:focus,
+.form-select:focus {
+  border-color: var(--color-blue);
+}
+
+/* ─── Submit button (full-width in form) ────────────────────────────────── */
+
+.form-submit {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 59px;
+  background-color: var(--color-blue);
+  color: var(--color-bg);
+  font-family: var(--font-body);
+  font-size: 17px;
+  font-weight: 800;
+  text-align: center;
+  border-radius: var(--radius-pill);
+  border: 2px solid transparent;
+  box-shadow: var(--shadow-btn);
+  cursor: pointer;
+  transition: var(--transition-tab);
+  white-space: nowrap;
+}
+
+.form-submit:hover {
+  background-color: var(--color-blue-deep);
+}

@@ -1,0 +1,150 @@
+/* ─── ImageBlock ─────────────────────────────────────────────────────────── */
+/* Reusable rotated-image component: white border, rounded corners,           */
+/* drop shadow, optional overflow-crop for cropped images.                    */
+
+.image-block {
+  position: relative;
+  flex-shrink: 0;
+}
+
+/* ─── Rotated photo frame ───────────────────────────────────────────────── */
+
+.image-block__frame {
+  position: relative;
+  z-index: 1;
+  border: 5px solid var(--color-white);
+  border-radius: var(--radius-img);
+  overflow: hidden;
+  box-shadow: var(--shadow-img);
+}
+
+.image-block__frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display: block;
+}
+
+/* Square photos (1:1) cropped into portrait frames need top-bias so the
+   subject isn't centered on the torso — adjust per photo if needed. */
+.image-block__frame--portrait img {
+  object-position: center 15%;
+}
+
+/* ─── Rotation variants (from Figma) ───────────────────────────────────── */
+
+.image-block--rot-pos-7   { transform: rotate(6.71deg); }
+.image-block--rot-neg-3   { transform: rotate(-2.73deg); }
+.image-block--rot-pos-4   { transform: rotate(3.63deg); }
+
+/* Wrapper that compensates for rotation overflow */
+.image-block__rotator {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* ─── Hero image container (right column) ──────────────────────────────── */
+
+.image-block--hero {
+  position: relative;
+  width: 509px;
+  height: 339px;
+  flex-shrink: 0;
+}
+
+.image-block--hero .image-block__rotator {
+  position: absolute;
+  width: 498px;
+  height: 404px;
+  left: -10px;
+  top: -64px;
+}
+
+.image-block--hero .image-block__frame {
+  width: 460px;
+  height: 353px;
+}
+
+/* ─── Section image container (left column) ────────────────────────────── */
+
+.image-block--section-left {
+  position: relative;
+  width: 410px;
+  height: 582px;
+  flex-shrink: 0;
+}
+
+.image-block--section-left .image-block__rotator {
+  width: 410px;
+  height: 582px;
+}
+
+.image-block--section-left .image-block__frame {
+  width: 384px;
+  height: 564px;
+}
+
+/* ─── Section image (right/large) ──────────────────────────────────────── */
+
+.image-block--section-right {
+  position: relative;
+  flex-shrink: 0;
+}
+
+.image-block--section-right .image-block__rotator {
+  width: 633px;
+  height: 471px;
+}
+
+.image-block--section-right .image-block__frame {
+  width: 607px;
+  height: 433px;
+}
+
+/* ─── SVG overlay (decorative vector) ──────────────────────────────────── */
+
+.image-block__overlay {
+  position: absolute;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.image-block__overlay img {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+/* Hero overlay (bottom-left) */
+.image-block__overlay--hero-vectorized {
+  left: -5.7%;
+  bottom: -11.8%;
+  width: 52.65%;
+  height: auto;
+  aspect-ratio: 268 / 209;
+}
+
+/* Section vector (bottom-right decoration) */
+.image-block__overlay--section-vec {
+  right: -11.06%;
+  bottom: -10.62%;
+  width: 54.5%;
+  height: auto;
+  aspect-ratio: 345 / 187;
+}
+
+/* Section-left vector (used in all three states) */
+.image-block__overlay--section-left-vec {
+  right: -9.76%;
+  bottom: -2.75%;
+  width: 48.78%;
+  height: auto;
+  aspect-ratio: 200 / 190;
+}
+
+/* Cropped image helper (for images that bleed outside the frame in Figma) */
+.image-block__frame--crop {
+  overflow: hidden;
+}

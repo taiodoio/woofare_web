@@ -1,0 +1,91 @@
+/* ─── How-To Section ─────────────────────────────────────────────────────── */
+
+.how-to {
+  width: 100%;
+  padding-inline: 28px;
+}
+
+.how-to__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-content);
+  align-items: center;
+}
+
+/* ─── Steps row ─────────────────────────────────────────────────────────── */
+
+.steps {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: var(--gap-cards);
+  align-items: stretch;
+  width: 100%;
+}
+
+/* ─── Single step card ──────────────────────────────────────────────────── */
+
+.step-card {
+  display: flex;
+  flex-direction: column;
+  gap: 9px;
+  min-width: 0;
+  padding: 33px;
+  background-color: var(--color-white);
+  border: 1px solid var(--color-card-border);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-card-0);
+}
+
+.step-card__badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-icon);
+  flex-shrink: 0;
+  font-family: var(--font-heading);
+  font-size: var(--size-h5);
+  line-height: 34.1px;
+  color: var(--color-bg);
+}
+
+.step-card__badge--accent   { background-color: var(--color-accent); }
+.step-card__badge--blue     { background-color: var(--color-blue); }
+.step-card__badge--orange   { background-color: var(--color-orange); }
+
+.step-card__title {
+  font-family: var(--font-heading);
+  font-size: 20px;
+  line-height: 24px;
+  letter-spacing: var(--tracking-h);
+  color: var(--color-dark);
+  white-space: nowrap;
+}
+
+.step-card__desc {
+  font-size: var(--size-body-sm);
+  line-height: var(--lh-body-sm);
+  font-weight: 400;
+  color: var(--color-text-mid);
+  max-width: 218px;
+}
+
+/* ─── Footnote (below steps grid) ──────────────────────────────────────── */
+
+.steps-footnote {
+  padding-inline: 32px;
+  width: 100%;
+}
+
+.steps-footnote p {
+  font-size: var(--size-body);
+  line-height: var(--lh-body);
+  color: var(--color-text-mid);
+  text-align: center;
+}
+
+.steps-footnote strong {
+  font-weight: 700;
+  color: var(--color-text-mid);
+}

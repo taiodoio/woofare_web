@@ -1,0 +1,87 @@
+/* ─── Dashboard / App Screenshot Section ────────────────────────────────── */
+
+.dashboard {
+  width: 100%;
+  padding-inline: 56px;
+}
+
+.dashboard__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-items);
+  padding: 10px 0;
+}
+
+.dashboard__eyebrow {
+  text-align: center;
+}
+
+.dashboard__title {
+  text-align: center;
+  font-family: var(--font-heading);
+  font-size: 36px;
+  line-height: 38.88px;
+  letter-spacing: var(--tracking-h);
+  color: var(--color-dark);
+}
+
+/* ─── Screenshot image ──────────────────────────────────────────────────── */
+
+.dashboard__screenshot {
+  width: 100%;
+  border-radius: 15px;
+  overflow: hidden;
+}
+
+.dashboard__screenshot img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 15px;
+  object-fit: contain;
+}
+
+/* ─── App mockup (Dipendenti) ───────────────────────────────────────────── */
+
+.dashboard__mockup-wrap {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  width: 100%;
+}
+
+.dashboard__mockup-wrap img.mockup-main {
+  width: 1012px;
+  height: auto;
+  object-fit: cover;
+}
+
+.dashboard__mockup-wrap img.mockup-phone {
+  position: absolute;
+  right: calc(50% - 506px + 20px);
+  bottom: 0;
+  width: 227px;
+  height: auto;
+  border-radius: 20px;
+  overflow: hidden;
+  object-fit: cover;
+}
+
+/* ─── Info chips grid ───────────────────────────────────────────────────── */
+/* inherits .info-chips-grid from page-shell.css */
+
+/* ─── Caption note below grid ───────────────────────────────────────────── */
+
+.dashboard__note {
+  padding-inline: 32px;
+  text-align: center;
+  font-size: var(--size-body);
+  line-height: var(--lh-body);
+  color: var(--color-text-mid);
+}
+
+.dashboard__note strong {
+  font-weight: 700;
+  color: var(--color-text-mid);
+}

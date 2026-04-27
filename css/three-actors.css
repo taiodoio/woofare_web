@@ -1,0 +1,49 @@
+/* ─── Three Actors Section ───────────────────────────────────────────────── */
+
+.three-actors {
+  width: 100%;
+}
+
+.three-actors__inner {
+  display: flex;
+  flex-direction: column;
+  gap: var(--gap-content);
+  align-items: center;
+}
+
+/* ─── Three columns ─────────────────────────────────────────────────────── */
+
+.actors-grid {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.actor-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding: 32px;
+  border-radius: var(--radius-card);
+  width: 359px;
+  flex-shrink: 0;
+  text-align: center;
+}
+
+.actor-card__title {
+  font-family: var(--font-heading);
+  font-size: var(--size-h5);
+  line-height: var(--lh-h5);
+  letter-spacing: var(--tracking-h);
+  color: var(--color-dark);
+}
+
+.actor-card__desc {
+  font-size: var(--size-body);
+  line-height: var(--lh-body);
+  font-weight: 400;
+  color: var(--color-text-dark);
+  width: 293px;
+}

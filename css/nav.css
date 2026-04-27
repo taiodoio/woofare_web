@@ -1,0 +1,137 @@
+/* ─── Navigation ─────────────────────────────────────────────────────────── */
+
+.nav {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  width: 100%;
+  background-color: var(--color-nav-bg);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border-bottom: 1px solid var(--color-card-border);
+  height: var(--nav-height);
+  transition: background-color 250ms ease, border-color 250ms ease, backdrop-filter 250ms ease;
+}
+
+.nav--scrolled {
+  background-color: var(--color-nav-bg);
+  backdrop-filter: blur(16px) saturate(140%);
+  -webkit-backdrop-filter: blur(16px) saturate(140%);
+  border-bottom: 1px solid var(--color-card-border);
+}
+
+.nav__inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: calc(var(--nav-height) - 1px);
+  padding-inline: var(--padding-nav);
+  max-width: calc(var(--max-content) + var(--padding-page) * 2);
+  margin-inline: auto;
+  width: 100%;
+}
+
+/* Logo */
+
+.nav__logo {
+  height: 46px;
+  width: auto;
+  flex-shrink: 0;
+}
+
+/* Nav links */
+
+.nav__links {
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  list-style: none;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.nav__link {
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 700;
+  line-height: 23.25px;
+  color: var(--color-text-dark);
+  opacity: 0.85;
+  white-space: nowrap;
+  transition: opacity 150ms ease;
+}
+
+.nav__link:hover {
+  opacity: 1;
+}
+
+/* CTA button in nav (smaller variant) */
+
+.nav__cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-blue);
+  color: var(--color-bg);
+  font-family: var(--font-body);
+  font-size: var(--size-label);
+  font-weight: 800;
+  line-height: var(--lh-label);
+  padding: 12px 20px;
+  border-radius: var(--radius-pill);
+  border: 2px solid transparent;
+  box-shadow: var(--shadow-btn-sm);
+  white-space: nowrap;
+  transition: var(--transition-tab);
+  flex-shrink: 0;
+}
+
+.nav__cta:hover {
+  background-color: var(--color-blue-deep);
+}
+
+/* Mobile hamburger (shown < 768px) */
+
+.nav__hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  padding: 8px;
+}
+
+.nav__hamburger span {
+  display: block;
+  width: 22px;
+  height: 2px;
+  background-color: var(--color-dark);
+  border-radius: 2px;
+  transition: transform 200ms ease, opacity 200ms ease;
+}
+
+/* State-specific nav links (hidden by default, shown via JS) */
+
+.nav__links--aziende   { display: flex; }
+.nav__links--dipendenti { display: none; }
+.nav__links--pet       { display: none; }
+
+.page-shell[data-state="dipendenti"] .nav__links--aziende   { display: none; }
+.page-shell[data-state="dipendenti"] .nav__links--dipendenti { display: flex; }
+
+.page-shell[data-state="pet-services"] .nav__links--aziende { display: none; }
+.page-shell[data-state="pet-services"] .nav__links--pet     { display: flex; }
+
+/* Responsive nav:
+   when horizontal space is tight, keep only logo + CTA */
+@media (max-width: 1200px) {
+  .nav__links {
+    display: none !important;
+  }
+
+  .nav__hamburger {
+    display: none;
+  }
+}

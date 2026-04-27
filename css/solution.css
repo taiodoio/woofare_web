@@ -1,0 +1,76 @@
+/* ─── Solution Section ───────────────────────────────────────────────────── */
+/* Layout: image left (rotated −2.73°) + content right. Shared across states. */
+
+.solution {
+  width: 100%;
+  padding: 15px 0;
+}
+
+.solution__inner {
+  display: flex;
+  gap: 50px;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+/* ─── Content column ────────────────────────────────────────────────────── */
+
+.solution__content {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+  width: 674px;
+  flex-shrink: 0;
+}
+
+.solution__header {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.solution__title {
+  font-family: var(--font-heading);
+  font-size: var(--size-h2);
+  line-height: var(--lh-h2);
+  letter-spacing: var(--tracking-h);
+  color: var(--color-dark);
+}
+
+/* The "non" highlighted word — rendered with .highlight-word in HTML */
+
+.solution__body {
+  font-size: var(--size-body-lg);
+  line-height: var(--lh-body-lg);
+  color: var(--color-dark);
+}
+
+.solution__body strong {
+  font-weight: 700;
+}
+
+/* ─── Feature list ──────────────────────────────────────────────────────── */
+
+.feature-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.feature-item {
+  padding: 10px 0;
+}
+
+.feature-item__title {
+  font-family: var(--font-heading);
+  font-size: var(--size-h5);
+  line-height: var(--lh-h5);
+  letter-spacing: var(--tracking-h);
+  color: var(--color-dark);
+}
+
+.feature-item__desc {
+  font-size: var(--size-body-lg);
+  line-height: var(--lh-h5);
+  font-weight: 400;
+  color: var(--color-dark);
+}
