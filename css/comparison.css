@@ -63,7 +63,7 @@
   line-height: var(--lh-eyebrow);
   letter-spacing: var(--tracking-eyebrow);
   text-transform: none;
-  color: var(--color-accent);
+  color: #2a2f31;
 }
 
 
@@ -148,7 +148,7 @@
 }
 
 .comparison-card--woofare .comparison-card__bullet {
-  background-color: rgba(255, 255, 255, 0.12);
+  background-color: #fdfff6;
 }
 
 /* ─── Section footnote ──────────────────────────────────────────────────── */
