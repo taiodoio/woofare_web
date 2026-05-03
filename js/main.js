@@ -15,11 +15,17 @@
   const logoLink = document.querySelector('.nav__logo-link');
   const navCta = document.querySelector('.nav__cta');
 
+  const validStateIds = new Set(['aziende', 'dipendenti', 'pet-services']);
   const waitingListByState = {
-    'state-aziende': '#waiting-list-a',
-    'state-dipendenti': '#waiting-list-b',
-    'state-pet-services': '#waiting-list-c'
+    'aziende': '#waiting-list-a',
+    'dipendenti': '#waiting-list-b',
+    'pet-services': '#waiting-list-c'
   };
+
+  function getStateFromHash() {
+    const hash = window.location.hash ? window.location.hash.slice(1) : '';
+    return validStateIds.has(hash) ? hash : null;
+  }
 
   function setMobileOpen(isOpen) {
     if (!mobileSelector || !mobileTrigger || !mobileMenu) return;
@@ -41,6 +47,8 @@
   }
 
   function activateState(targetId) {
+    if (!validStateIds.has(targetId)) return;
+
     // Update tab buttons
     tabs.forEach(tab => {
       const isActive = tab.dataset.target === targetId;
@@ -61,7 +69,7 @@
     });
 
     // Drive nav link variant via data attribute on shell
-    shell.dataset.state = targetId.replace('state-', '');
+    shell.dataset.state = targetId;
 
     // Keep mobile custom dropdown in sync
     updateMobileState(targetId);
@@ -70,6 +78,11 @@
     // Keep nav CTA anchored to the active audience section
     if (navCta && waitingListByState[targetId]) {
       navCta.setAttribute('href', waitingListByState[targetId]);
+    }
+
+    // Keep URL hash in sync without forcing a jump
+    if (window.location.hash !== `#${targetId}`) {
+      history.replaceState(null, '', `#${targetId}`);
     }
 
     // Persist to sessionStorage so the last tab survives a page reload
@@ -124,8 +137,15 @@
     try { return sessionStorage.getItem('woofare-state'); } catch (_) { return null; }
   })();
 
-  const initial = stored || 'state-aziende';
+  const fromHash = getStateFromHash();
+  const initial = fromHash || stored || 'aziende';
   activateState(initial);
+
+  // Back/forward or external hash changes should switch state
+  window.addEventListener('hashchange', () => {
+    const next = getStateFromHash();
+    if (next) activateState(next);
+  });
 
   // Smooth-scroll CTA "Scopri come funziona" → first section below hero
   document.querySelectorAll('[data-scroll-to]').forEach(btn => {
