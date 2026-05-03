@@ -284,6 +284,18 @@ button {
   z-index: 61;
 }
 
+.state-switcher-overlay {
+  display: none;
+}
+
+.state-switcher-overlay[hidden] {
+  display: none !important;
+}
+
+body.state-switcher-open {
+  overflow: hidden;
+}
+
 /* ─── Info chip (bullet + label) ───────────────────────────────────────── */
 
 .info-chip {

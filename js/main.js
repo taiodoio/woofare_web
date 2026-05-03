@@ -16,6 +16,7 @@
   const stateSwitcherFab = document.getElementById('state-switcher-fab');
   const stateSwitcherFabIcon = document.getElementById('state-switcher-fab-icon');
   const stateSwitcherPopover = document.getElementById('state-switcher-popover');
+  const stateSwitcherOverlay = document.getElementById('state-switcher-overlay');
   const stateSwitcherOptions = stateSwitcherPopover ? stateSwitcherPopover.querySelectorAll('.state-selector__mobile-option') : [];
   const logoLink = document.querySelector('.nav__logo-link');
   const navCta = document.querySelector('.nav__cta');
@@ -72,7 +73,12 @@
 
   function setStateSwitcherPopoverOpen(isOpen) {
     if (!stateSwitcherPopover || !stateSwitcherFab) return;
+    const isMobile = window.matchMedia('(max-width: 768px)').matches;
     stateSwitcherPopover.hidden = !isOpen;
+    if (stateSwitcherOverlay) {
+      stateSwitcherOverlay.hidden = !(isOpen && isMobile);
+    }
+    document.body.classList.toggle('state-switcher-open', isOpen && isMobile);
     stateSwitcherFab.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   }
 
@@ -252,6 +258,12 @@
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape') setStateSwitcherPopoverOpen(false);
   });
+
+  if (stateSwitcherOverlay) {
+    stateSwitcherOverlay.addEventListener('click', () => {
+      setStateSwitcherPopoverOpen(false);
+    });
+  }
 
   if (logoLink) {
     logoLink.addEventListener('click', e => {

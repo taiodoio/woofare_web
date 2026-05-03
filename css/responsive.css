@@ -336,6 +336,16 @@
     width: min(320px, calc(100vw - 24px));
   }
 
+  .state-switcher-overlay:not([hidden]) {
+    position: fixed;
+    inset: 0;
+    display: block;
+    background: rgba(16, 27, 77, 0.28);
+    backdrop-filter: saturate(120%) blur(1px);
+    -webkit-backdrop-filter: saturate(120%) blur(1px);
+    z-index: 59;
+  }
+
   .state-selector__tab {
     display: none;
   }
