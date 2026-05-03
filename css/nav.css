@@ -135,3 +135,11 @@
     display: none;
   }
 }
+
+/* Extra-small phones: scale logo proportionally (no squish) */
+@media (max-width: 360px) {
+  .nav__logo {
+    width: clamp(120px, 38vw, 150px);
+    height: auto;
+  }
+}
