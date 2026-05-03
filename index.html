@@ -14,6 +14,15 @@
   <meta name="twitter:title" content="Woofare — Il benefit aziendale pensato per chi ha un animale domestico" />
   <meta name="twitter:description" content="Woofare aiuta aziende, dipendenti e pet-services a trasformare il fringe benefit in un servizio concreto." />
   <meta name="twitter:image" content="imgs/social-share.png" />
+  <script>
+    (function () {
+      var rawHash = window.location.hash ? window.location.hash.slice(1) : '';
+      var validStateHashes = { aziende: true, dipendenti: true, 'pet-services': true };
+      if (!validStateHashes[rawHash]) return;
+      window.__woofareInitialState = rawHash;
+      history.replaceState(null, '', window.location.pathname + window.location.search);
+    })();
+  </script>
 
   <!-- Google Fonts: Lilita One + Nunito -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />

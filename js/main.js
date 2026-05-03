@@ -138,11 +138,11 @@
     try { return sessionStorage.getItem('woofare-state'); } catch (_) { return null; }
   })();
 
-  const fromHash = getStateFromHash();
+  const preloadedState = typeof window.__woofareInitialState === 'string'
+    ? window.__woofareInitialState
+    : null;
+  const fromHash = preloadedState || getStateFromHash();
   const initial = fromHash || stored || 'aziende';
-  if (fromHash) {
-    history.replaceState(null, '', `${window.location.pathname}${window.location.search}`);
-  }
   activateState(initial, { syncHash: false });
 
   // Always start from top on load/refresh so the state selector is visible.
