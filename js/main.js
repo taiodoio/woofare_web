@@ -13,6 +13,10 @@
   const mobileIcon = mobileSelector ? mobileSelector.querySelector('.state-selector__mobile-icon') : null;
   const mobileOptions = mobileSelector ? mobileSelector.querySelectorAll('.state-selector__mobile-option') : [];
   const scrollTopButton = document.getElementById('scroll-top');
+  const stateSwitcherFab = document.getElementById('state-switcher-fab');
+  const stateSwitcherFabIcon = document.getElementById('state-switcher-fab-icon');
+  const stateSwitcherPopover = document.getElementById('state-switcher-popover');
+  const stateSwitcherOptions = stateSwitcherPopover ? stateSwitcherPopover.querySelectorAll('.state-selector__mobile-option') : [];
   const logoLink = document.querySelector('.nav__logo-link');
   const navCta = document.querySelector('.nav__cta');
 
@@ -22,7 +26,6 @@
     'dipendenti': '#waiting-list-b',
     'pet-services': '#waiting-list-c'
   };
-
   function getStateFromHash() {
     const hash = window.location.hash ? window.location.hash.slice(1) : '';
     return validStateIds.has(hash) ? hash : null;
@@ -55,6 +58,31 @@
 
   function getStateId(stateNode) {
     return stateNode.dataset.stateId || stateNode.id;
+  }
+
+  function updateStateSwitcherFab(targetId) {
+    if (!stateSwitcherFab) return;
+    if (!stateSwitcherFabIcon) return;
+    const activeTabIcon = document.querySelector(`.state-selector__tab[data-target="${targetId}"] .state-selector__icon`);
+    if (activeTabIcon) {
+      const iconMarkup = activeTabIcon.outerHTML.replace('width="16"', 'width="24"').replace('height="16"', 'height="24"');
+      stateSwitcherFabIcon.innerHTML = iconMarkup;
+    }
+  }
+
+  function setStateSwitcherPopoverOpen(isOpen) {
+    if (!stateSwitcherPopover || !stateSwitcherFab) return;
+    stateSwitcherPopover.hidden = !isOpen;
+    stateSwitcherFab.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  }
+
+  function updateStateSwitcherOptions(targetId) {
+    if (!stateSwitcherOptions.length) return;
+    stateSwitcherOptions.forEach(option => {
+      const isActive = option.dataset.target === targetId;
+      option.classList.toggle('state-selector__mobile-option--active', isActive);
+      option.setAttribute('aria-selected', isActive ? 'true' : 'false');
+    });
   }
 
   function activateState(targetId, options = {}) {
@@ -99,6 +127,10 @@
 
     // Persist to sessionStorage so the last tab survives a page reload
     try { sessionStorage.setItem('woofare-state', targetId); } catch (_) {}
+
+    // Keep floating state switcher in sync with current active profile
+    updateStateSwitcherFab(targetId);
+    updateStateSwitcherOptions(targetId);
   }
 
   // Bind tab clicks
@@ -180,6 +212,9 @@
     const toggleScrollTopButton = () => {
       const isVisible = window.scrollY > 320;
       scrollTopButton.classList.toggle('scroll-top--visible', isVisible);
+      if (stateSwitcherFab) {
+        stateSwitcherFab.classList.toggle('state-switcher-fab--visible', isVisible);
+      }
     };
 
     window.addEventListener('scroll', toggleScrollTopButton, { passive: true });
@@ -189,6 +224,34 @@
       window.scrollTo({ top: 0, behavior: 'smooth' });
     });
   }
+
+  if (stateSwitcherFab) {
+    stateSwitcherFab.addEventListener('click', () => {
+      const isOpen = stateSwitcherPopover && !stateSwitcherPopover.hidden;
+      setStateSwitcherPopoverOpen(!isOpen);
+    });
+  }
+
+  if (stateSwitcherOptions.length) {
+    stateSwitcherOptions.forEach(option => {
+      option.addEventListener('click', () => {
+        activateState(option.dataset.target);
+        setStateSwitcherPopoverOpen(false);
+      });
+    });
+  }
+
+  document.addEventListener('click', e => {
+    if (!stateSwitcherFab || !stateSwitcherPopover) return;
+    if (stateSwitcherPopover.hidden) return;
+    const clickInsideFab = stateSwitcherFab.contains(e.target);
+    const clickInsidePopover = stateSwitcherPopover.contains(e.target);
+    if (!clickInsideFab && !clickInsidePopover) setStateSwitcherPopoverOpen(false);
+  });
+
+  document.addEventListener('keydown', e => {
+    if (e.key === 'Escape') setStateSwitcherPopoverOpen(false);
+  });
 
   if (logoLink) {
     logoLink.addEventListener('click', e => {

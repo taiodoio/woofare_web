@@ -225,6 +225,65 @@ button {
   pointer-events: auto;
 }
 
+/* ─── Floating state selector trigger ─────────────────────────────────── */
+
+.state-switcher-fab {
+  position: fixed;
+  right: 24px;
+  bottom: 90px;
+  width: 56px;
+  height: 56px;
+  border-radius: var(--radius-pill);
+  background-color: var(--color-dark);
+  color: var(--color-white);
+  border: 2px solid transparent;
+  box-shadow: var(--shadow-btn-sm);
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(8px);
+  pointer-events: none;
+  transition: opacity 200ms ease, transform 200ms ease, background-color 200ms ease;
+  z-index: 60;
+}
+
+.state-switcher-fab .state-selector__icon {
+  color: currentColor;
+  width: 24px;
+  height: 24px;
+}
+
+.state-switcher-fab:hover {
+  background-color: var(--color-text-dark);
+}
+
+.state-switcher-fab:focus-visible {
+  outline: 3px solid var(--color-accent-light);
+  outline-offset: 3px;
+}
+
+.state-switcher-fab--visible {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  pointer-events: auto;
+}
+
+.state-switcher-popover {
+  position: fixed;
+  right: 24px;
+  bottom: 156px;
+  width: min(320px, calc(100vw - 32px));
+  background-color: var(--color-white);
+  border: 1px solid var(--color-card-border);
+  border-radius: 24px;
+  box-shadow: var(--shadow-card-0);
+  padding: 8px;
+  z-index: 61;
+}
+
 /* ─── Info chip (bullet + label) ───────────────────────────────────────── */
 
 .info-chip {
