@@ -46,7 +46,8 @@
     if (mobileLabel) mobileLabel.textContent = activeLabel;
   }
 
-  function activateState(targetId) {
+  function activateState(targetId, options = {}) {
+    const { syncHash = true } = options;
     if (!validStateIds.has(targetId)) return;
 
     // Update tab buttons
@@ -81,7 +82,7 @@
     }
 
     // Keep URL hash in sync without forcing a jump
-    if (window.location.hash !== `#${targetId}`) {
+    if (syncHash && window.location.hash !== `#${targetId}`) {
       history.replaceState(null, '', `#${targetId}`);
     }
 
@@ -139,7 +140,10 @@
 
   const fromHash = getStateFromHash();
   const initial = fromHash || stored || 'aziende';
-  activateState(initial);
+  if (fromHash) {
+    history.replaceState(null, '', `${window.location.pathname}${window.location.search}`);
+  }
+  activateState(initial, { syncHash: false });
 
   // Always start from top on load/refresh so the state selector is visible.
   window.requestAnimationFrame(() => {
