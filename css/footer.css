@@ -47,3 +47,14 @@
 .footer__contacts strong {
   font-weight: 700;
 }
+
+.footer__contacts {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer__social-link {
+  display: inline-flex;
+  line-height: 0;
+}
