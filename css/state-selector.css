@@ -39,14 +39,13 @@
   padding-inline: 49px;
 }
 
-/* Dot indicator */
-.state-selector__dot {
+/* Icon indicator */
+.state-selector__icon {
   flex-shrink: 0;
-  width: 8px;
-  height: 8px;
-  border-radius: 4px;
-  background-color: var(--color-dot-inactive);
-  transition: background-color 200ms ease;
+  width: 16px;
+  height: 16px;
+  color: var(--color-dot-inactive);
+  transition: color 200ms ease;
 }
 
 /* ─── Active state ──────────────────────────────────────────────────────── */
@@ -57,8 +56,8 @@
   box-shadow: var(--shadow-tab);
 }
 
-.state-selector__tab--active .state-selector__dot {
-  background-color: var(--color-accent);
+.state-selector__tab--active .state-selector__icon {
+  color: var(--color-accent);
 }
 
 /* ─── Hover on inactive tabs ────────────────────────────────────────────── */
@@ -147,10 +146,10 @@
   transition: var(--transition-tab);
 }
 
-.state-selector__mobile-option .state-selector__dot {
-  width: 8px;
-  height: 8px;
-  border-radius: 4px;
+.state-selector__mobile-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .state-selector__mobile-option:hover {
@@ -164,8 +163,8 @@
   box-shadow: var(--shadow-tab);
 }
 
-.state-selector__mobile-option--active .state-selector__dot {
-  background-color: var(--color-accent);
+.state-selector__mobile-option--active .state-selector__icon {
+  color: var(--color-accent);
 }
 
 .sr-only {

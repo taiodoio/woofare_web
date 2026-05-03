@@ -10,6 +10,7 @@
   const mobileTrigger = document.getElementById('state-selector-mobile-button');
   const mobileMenu = document.getElementById('state-selector-mobile-list');
   const mobileLabel = mobileSelector ? mobileSelector.querySelector('.state-selector__mobile-label') : null;
+  const mobileIcon = mobileSelector ? mobileSelector.querySelector('.state-selector__mobile-icon') : null;
   const mobileOptions = mobileSelector ? mobileSelector.querySelectorAll('.state-selector__mobile-option') : [];
   const scrollTopButton = document.getElementById('scroll-top');
   const logoLink = document.querySelector('.nav__logo-link');
@@ -37,13 +38,19 @@
   function updateMobileState(targetId) {
     if (!mobileOptions.length) return;
     let activeLabel = 'Per Aziende';
+    let activeIconMarkup = '';
     mobileOptions.forEach(option => {
       const isActive = option.dataset.target === targetId;
       option.classList.toggle('state-selector__mobile-option--active', isActive);
       option.setAttribute('aria-selected', isActive ? 'true' : 'false');
-      if (isActive) activeLabel = option.textContent.trim();
+      if (isActive) {
+        activeLabel = option.textContent.trim();
+        const icon = option.querySelector('.state-selector__icon');
+        activeIconMarkup = icon ? icon.outerHTML : '';
+      }
     });
     if (mobileLabel) mobileLabel.textContent = activeLabel;
+    if (mobileIcon && activeIconMarkup) mobileIcon.innerHTML = activeIconMarkup;
   }
 
   function getStateId(stateNode) {
