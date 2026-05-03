@@ -46,6 +46,10 @@
     if (mobileLabel) mobileLabel.textContent = activeLabel;
   }
 
+  function getStateId(stateNode) {
+    return stateNode.dataset.stateId || stateNode.id;
+  }
+
   function activateState(targetId, options = {}) {
     const { syncHash = true } = options;
     if (!validStateIds.has(targetId)) return;
@@ -59,7 +63,7 @@
 
     // Show/hide content states
     states.forEach(state => {
-      const isActive = state.id === targetId;
+      const isActive = getStateId(state) === targetId;
       if (isActive) {
         state.removeAttribute('hidden');
         state.setAttribute('aria-current', 'true');

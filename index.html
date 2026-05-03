@@ -100,7 +100,7 @@
       class="state-selector__tab state-selector__tab--active"
       role="tab"
       aria-selected="true"
-      aria-controls="aziende"
+      aria-controls="state-aziende"
       data-target="aziende"
     >
       <span class="state-selector__dot"></span>
@@ -110,7 +110,7 @@
       class="state-selector__tab"
       role="tab"
       aria-selected="false"
-      aria-controls="dipendenti"
+      aria-controls="state-dipendenti"
       data-target="dipendenti"
     >
       <span class="state-selector__dot"></span>
@@ -120,7 +120,7 @@
       class="state-selector__tab state-selector__tab--pet"
       role="tab"
       aria-selected="false"
-      aria-controls="pet-services"
+      aria-controls="state-pet-services"
       data-target="pet-services"
     >
       <span class="state-selector__dot"></span>
@@ -159,7 +159,8 @@
   <!-- ═══════════════════════════════════════════════════ CONTENT STATE A -->
   <!-- Audience: HR / People & Welfare                                     -->
   <div
-    id="aziende"
+    id="state-aziende"
+    data-state-id="aziende"
     class="content-state section-wrap"
     role="tabpanel"
     aria-labelledby="tab-aziende"
@@ -569,7 +570,8 @@
   <!-- ═══════════════════════════════════════════════════ CONTENT STATE B -->
   <!-- Audience: Dipendenti                                                -->
   <div
-    id="dipendenti"
+    id="state-dipendenti"
+    data-state-id="dipendenti"
     class="content-state section-wrap"
     role="tabpanel"
     hidden
@@ -928,7 +930,8 @@
   <!-- ═══════════════════════════════════════════════ CONTENT STATE C -->
   <!-- Audience: Pet-Services                                          -->
   <div
-    id="pet-services"
+    id="state-pet-services"
+    data-state-id="pet-services"
     class="content-state section-wrap"
     role="tabpanel"
     hidden
