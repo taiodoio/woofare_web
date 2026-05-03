@@ -138,17 +138,13 @@
   })();
 
   const fromHash = getStateFromHash();
-  const hasStateHashOnLoad = Boolean(fromHash);
   const initial = fromHash || stored || 'aziende';
   activateState(initial);
 
-  // If the page is opened with a state hash (e.g. #dipendenti), avoid the
-  // browser's native anchor jump so the state selector stays visible.
-  if (hasStateHashOnLoad) {
-    window.requestAnimationFrame(() => {
-      window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
-    });
-  }
+  // Always start from top on load/refresh so the state selector is visible.
+  window.requestAnimationFrame(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'auto' });
+  });
 
   // Back/forward or external hash changes should switch state
   window.addEventListener('hashchange', () => {
