@@ -37,6 +37,19 @@
 
 /* ── 1025px-1280px: prevent PPP text clipping ─────────────────────────── */
 @media (min-width: 1025px) and (max-width: 1280px) {
+  /* Keep hero CTAs on one row in narrow-desktop range */
+  .hero .btn-group {
+    flex-wrap: nowrap;
+    gap: 16px;
+  }
+
+  .hero .btn-primary,
+  .hero .btn-outline {
+    padding: 16px 20px;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
   .ppp-card__copy {
     width: 52%;
     min-width: 0;
@@ -60,6 +73,13 @@
 
   .ppp-card__price {
     max-width: 300px;
+  }
+}
+
+/* Desktop and above: hero CTAs side by side */
+@media (min-width: 1025px) {
+  .hero .btn-group {
+    flex-wrap: nowrap;
   }
 }
 
@@ -243,6 +263,14 @@
   .dashboard__mockup-wrap img.mockup-phone { display: none; }
 }
 
+/* ── 575px-1024px: center hero CTAs in-page ───────────────────────────── */
+@media (min-width: 575px) and (max-width: 1024px) {
+  .hero .btn-group {
+    justify-content: center;
+    align-self: center;
+  }
+}
+
 /* ── 769px-1024px: reduce decorative SVG overlays ─────────────────────── */
 @media (min-width: 769px) and (max-width: 1024px) {
   .image-block__overlay--hero-vectorized {
@@ -285,6 +313,14 @@
     padding: 8px;
     position: relative;
     top: 0;
+  }
+
+  .scroll-top {
+    right: 16px;
+    bottom: 16px;
+    width: 52px;
+    height: 52px;
+    font-size: 24px;
   }
 
   .state-selector__tab {
@@ -418,4 +454,16 @@
   .image-block--hero .image-block__rotator { width: min(100%, 420px); }
   .image-block--section-left .image-block__rotator { width: min(100%, 360px); }
   .image-block--section-right .image-block__rotator { width: min(100%, 560px); }
+}
+
+/* ── 481px-564px: full-width CTAs ─────────────────────────────────────── */
+@media (min-width: 481px) and (max-width: 564px) {
+  .btn-group {
+    width: 100%;
+    flex-direction: column;
+    gap: 12px;
+    align-items: stretch;
+  }
+  .btn-primary,
+  .btn-outline { width: 100%; justify-content: center; }
 }

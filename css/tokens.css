@@ -64,7 +64,10 @@
   --gap-sm:         12px;
   --gap-xs:         9px;
 
-  --padding-page:   263px;   /* horizontal page padding at 1710px */
+  /* Fluid desktop gutter:
+     keeps 263px at 1710px and scales down on narrower desktops
+     to avoid squeezing hero content between 1281px and 1709px. */
+  --padding-page:   clamp(40px, calc((100vw - 1184px) / 2), 263px);
   --padding-card:   33px;
   --padding-nav:    28px;
 

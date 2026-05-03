@@ -11,6 +11,15 @@
   const mobileMenu = document.getElementById('state-selector-mobile-list');
   const mobileLabel = mobileSelector ? mobileSelector.querySelector('.state-selector__mobile-label') : null;
   const mobileOptions = mobileSelector ? mobileSelector.querySelectorAll('.state-selector__mobile-option') : [];
+  const scrollTopButton = document.getElementById('scroll-top');
+  const logoLink = document.querySelector('.nav__logo-link');
+  const navCta = document.querySelector('.nav__cta');
+
+  const waitingListByState = {
+    'state-aziende': '#waiting-list-a',
+    'state-dipendenti': '#waiting-list-b',
+    'state-pet-services': '#waiting-list-c'
+  };
 
   function setMobileOpen(isOpen) {
     if (!mobileSelector || !mobileTrigger || !mobileMenu) return;
@@ -57,6 +66,11 @@
     // Keep mobile custom dropdown in sync
     updateMobileState(targetId);
     setMobileOpen(false);
+
+    // Keep nav CTA anchored to the active audience section
+    if (navCta && waitingListByState[targetId]) {
+      navCta.setAttribute('href', waitingListByState[targetId]);
+    }
 
     // Persist to sessionStorage so the last tab survives a page reload
     try { sessionStorage.setItem('woofare-state', targetId); } catch (_) {}
@@ -120,4 +134,26 @@
       if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
     });
   });
+
+  // Floating button: back to top
+  if (scrollTopButton) {
+    const toggleScrollTopButton = () => {
+      const isVisible = window.scrollY > 320;
+      scrollTopButton.classList.toggle('scroll-top--visible', isVisible);
+    };
+
+    window.addEventListener('scroll', toggleScrollTopButton, { passive: true });
+    toggleScrollTopButton();
+
+    scrollTopButton.addEventListener('click', () => {
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
+
+  if (logoLink) {
+    logoLink.addEventListener('click', e => {
+      e.preventDefault();
+      window.scrollTo({ top: 0, behavior: 'smooth' });
+    });
+  }
 })();

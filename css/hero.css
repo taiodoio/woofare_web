@@ -3,7 +3,7 @@
 .hero {
   width: 100%;
   padding: 15px 0;
-  overflow: hidden;
+  overflow: visible;
 }
 
 .hero__inner {
